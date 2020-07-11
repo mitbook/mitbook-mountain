@@ -1,0 +1,3 @@
+#AutoConfigure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.matchbook.config.MitDtAutoConfig

@@ -5,6 +5,10 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mitbook-river/pom.xml" />
+        <option value="$PROJECT_DIR$/mitbook-autoconfiguration/pom.xml" />
+        <option value="$PROJECT_DIR$/mitbook-stater/pom.xml" />
+        <option value="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/pom.xml" />
+        <option value="$PROJECT_DIR$/mitbook-river/mitbook-stater/pom.xml" />
       </list>
     </option>
   </component>

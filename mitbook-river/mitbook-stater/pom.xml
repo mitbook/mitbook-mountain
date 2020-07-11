@@ -3,16 +3,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.1.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>com.mitbook</groupId>
+        <artifactId>mitbook-river</artifactId>
+        <version>1.0</version>
     </parent>
     <groupId>com.mitbook</groupId>
-    <artifactId>mitbook-river</artifactId>
+    <artifactId>mitbook-stater</artifactId>
     <version>1.0</version>
-    <name>mitbook-river</name>
-    <description>mitbook-river</description>
+    <name>mitbook-stater</name>
+    <description>mitbook-stater</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -20,18 +19,29 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <groupId>com.mitbook</groupId>
+            <artifactId>mitbook-autoconfiguration</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="ee7c843b-5a7c-41e1-af8b-dc0c29d39d9d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_58.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_configuration_processor_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_3_1_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/mitbook-autoconfiguration.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/ChildTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitAbstractConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitGlobalTransactionManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitTruncationBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/TransactionalGroup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/intercept/GlobalTransactionIdIntercept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/anno/EnableMitDistributedTransactional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/anno/MitTransactional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/aspect/MitConnectionAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/aspect/MitTransactionalAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalTypeEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/holder/MitDtProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/holder/MitTransactionalHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/marker/ConfigMarker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/utils/MitDtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/test/java/com/mitbook/MitbookAutoconfigurationApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-stater/mitbook-stater.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mitbook-river/mitbook-stater/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_test_3_3_6_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_reactive_2_3_1_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-mountain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-mountain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-river.iml" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-river/mitbook-river.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-river/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,18 +81,32 @@
     </option>
   </component>
   <component name="ProjectId" id="1eXtSJ1KZGaRp732DC5ndunpYFo" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/resources" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/resources" />
+      <recent name="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mitbook-river" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,20 +120,63 @@
       <updated>1594479763993</updated>
       <workItem from="1594479768710" duration="19000" />
       <workItem from="1594479792795" duration="975000" />
+      <workItem from="1594481913291" duration="1407000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="224" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594483324674">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state x="224" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/80.23.1360.877@80.23.1360.877" timestamp="1594483324674" />
+    <state width="1318" height="231" key="GridCell.Tab.0.bottom" timestamp="1594483310770">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state width="1318" height="231" key="GridCell.Tab.0.bottom/80.23.1360.877@80.23.1360.877" timestamp="1594483310770" />
+    <state width="1318" height="231" key="GridCell.Tab.0.center" timestamp="1594483310769">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state width="1318" height="231" key="GridCell.Tab.0.center/80.23.1360.877@80.23.1360.877" timestamp="1594483310769" />
+    <state width="1318" height="231" key="GridCell.Tab.0.left" timestamp="1594483310769">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state width="1318" height="231" key="GridCell.Tab.0.left/80.23.1360.877@80.23.1360.877" timestamp="1594483310769" />
+    <state width="1318" height="231" key="GridCell.Tab.0.right" timestamp="1594483310770">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state width="1318" height="231" key="GridCell.Tab.0.right/80.23.1360.877@80.23.1360.877" timestamp="1594483310770" />
     <state x="269" y="100" key="SettingsEditor" timestamp="1594479815307">
       <screen x="80" y="23" width="1360" height="877" />
     </state>
     <state x="269" y="100" key="SettingsEditor/80.23.1360.877@80.23.1360.877" timestamp="1594479815307" />
-    <state x="154" y="124" key="new project wizard" timestamp="1594480335273">
+    <state x="461" y="216" width="726" height="490" key="find.popup" timestamp="1594483054625">
       <screen x="80" y="23" width="1360" height="877" />
     </state>
-    <state x="154" y="124" key="new project wizard/80.23.1360.877@80.23.1360.877" timestamp="1594480335273" />
+    <state x="461" y="216" width="726" height="490" key="find.popup/80.23.1360.877@80.23.1360.877" timestamp="1594483054625" />
+    <state x="154" y="124" key="new project wizard" timestamp="1594482367237">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state x="154" y="124" key="new project wizard/80.23.1360.877@80.23.1360.877" timestamp="1594482367237" />
+    <state x="425" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1594482773338">
+      <screen x="80" y="23" width="1360" height="877" />
+    </state>
+    <state x="425" y="213" width="670" height="676" key="search.everywhere.popup/80.23.1360.877@80.23.1360.877" timestamp="1594482773338" />
   </component>
 </project>
