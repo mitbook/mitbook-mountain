@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mitbook-mountain.iml" filepath="$PROJECT_DIR$/mitbook-mountain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mitbook-river/mitbook-river.iml" filepath="$PROJECT_DIR$/mitbook-river/mitbook-river.iml" />
     </modules>
   </component>
 </project>
