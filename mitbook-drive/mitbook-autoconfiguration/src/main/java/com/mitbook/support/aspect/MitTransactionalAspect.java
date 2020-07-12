@@ -38,10 +38,8 @@ public class MitTransactionalAspect {
     
     @Pointcut("@annotation(com.mitbook.support.anno.MitTransactional)")
     public void pointCut() {
+    
     }
-    
-    ;
-    
     @Around("pointCut()")
     public void invoke(ProceedingJoinPoint joinPoint) throws Exception {
         
