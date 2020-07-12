@@ -39,7 +39,7 @@ public class MitConnection extends MitAbstractConnection {
     @Override
     public void commit() throws SQLException {
         
-        //从线程变量中获取全局事务ID
+        //从线程变量中获取全局事务id
         String globalTransactionId = MitTransactionalHolder.get();
         
         //没有加入到分布式事务中,使用本地的事务
@@ -103,7 +103,11 @@ public class MitConnection extends MitAbstractConnection {
     public void close() throws SQLException {
     
     }
-    
+    /**
+     * 全局事务提交
+     * @param connection
+     * @param pool
+     */
     private void globalCommit(Connection connection, ScheduledExecutorService pool) {
         try {
             connection.commit();
@@ -118,7 +122,11 @@ public class MitConnection extends MitAbstractConnection {
         }
         pool.shutdownNow();
     }
-    
+    /**
+     * 分支事务回滚
+     * @param connection
+     * @param pool
+     */
     private void globalRollBack(Connection connection, ScheduledExecutorService pool) {
         //分布式事务不能提交
         try {
@@ -135,5 +143,4 @@ public class MitConnection extends MitAbstractConnection {
         }
         pool.shutdownNow();
     }
-    
 }
