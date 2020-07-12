@@ -55,10 +55,10 @@ public class MitTransactionalAspect {
         if (transactionalTypeEnum.getCode() == TransactionalTypeEnum.BEGIN.getCode()) {
             
             //生成全局唯一ID
-            String gloableTransactionId = MitDtUtil.generatorGlobalTransactionalId();
+            String gableTransactionId = MitDtUtil.generatorGlobalTransactionalId();
             
             //放入线程变量中
-            MitTransactionalHolder.set(gloableTransactionId);
+            MitTransactionalHolder.set(gableTransactionId);
         }
         
         //使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WATING状态)
