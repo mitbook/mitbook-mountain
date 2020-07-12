@@ -61,7 +61,7 @@ public class MitTransactionalAspect {
             MitTransactionalHolder.set(gableTransactionId);
         }
         
-        //使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WATING状态)
+        //使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WAFTING状态)
         ChildTransaction childTransaction = builderChildTransactionObj(transactionalTypeEnum.getCode(),
                 TransactionalEnumStatus.WAITING.getCode());
         
@@ -101,13 +101,13 @@ public class MitTransactionalAspect {
     /**
      * 构造子事务对象
      */
-    private ChildTransaction builderChildTransactionObj(Integer TransactionalTypeEunmCode,
-            Integer TransationalEnumStatusCode) {
+    private ChildTransaction builderChildTransactionObj(Integer TransactionalTypeEnumCode,
+            Integer TransactionalEnumStatusCode) {
         MitTruncationBuilder mitTruncationBuilder = new MitTruncationBuilder();
         String childTransId = MitDtUtil.generatorChildTransactionalId();
         MitTransactionalHolder.setChild(childTransId);
-        return mitTruncationBuilder.builderTransactionalTypeEnumCode(TransactionalTypeEunmCode)
-                .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(TransationalEnumStatusCode)
+        return mitTruncationBuilder.builderTransactionalTypeEnumCode(TransactionalTypeEnumCode)
+                .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(TransactionalEnumStatusCode)
                 .builderGlobalTransactionId(MitTransactionalHolder.get()).builder();
     }
 }
