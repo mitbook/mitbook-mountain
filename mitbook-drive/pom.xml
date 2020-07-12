@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mitbook</groupId>
-    <artifactId>mitbook-river</artifactId>
+    <artifactId>mitbook-drive</artifactId>
     <version>1.0</version>
-    <name>mitbook-river</name>
-    <description>mitbook-river</description>
+    <name>mitbook-drive</name>
+    <description>mitbook-drive</description>
     <packaging>pom</packaging>
     <modules>
         <module>mitbook-autoconfiguration</module>

@@ -20,21 +20,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee7c843b-5a7c-41e1-af8b-dc0c29d39d9d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/OrderInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/ProductStockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/ProductStockInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/mapper/OrderInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/mapper/OrderInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/IOrderInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/IOrderInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/controller/ProductInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/controller/ProductInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/entity/ProductStockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/entity/ProductStockInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/mapper/ProductInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/mapper/ProductInfoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/IProductStockInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/IProductStockInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/ProductStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/ProductStockServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/.mvn/wrapper/MavenWrapperDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/mitbook-autoconfiguration.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/ChildTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/ChildTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitAbstractConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitAbstractConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitGlobalTransactionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitGlobalTransactionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitTruncationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitTruncationBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/core/TransactionalGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/TransactionalGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/intercept/GlobalTransactionIdIntercept.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/intercept/GlobalTransactionIdIntercept.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/anno/EnableMitDistributedTransactional.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/anno/EnableMitDistributedTransactional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/anno/MitTransactional.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/anno/MitTransactional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/aspect/MitConnectionAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/aspect/MitConnectionAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/aspect/MitTransactionalAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/aspect/MitTransactionalAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalTypeEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalTypeEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/holder/MitDtProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/holder/MitDtProperties.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/holder/MitTransactionalHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/holder/MitTransactionalHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/marker/ConfigMarker.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/marker/ConfigMarker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/utils/MitDtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/support/utils/MitDtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/resources/META-INF/spring.factories" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/resources/META-INF/spring.factories" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/test/java/com/mitbook/MitbookAutoconfigurationApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/test/java/com/mitbook/MitbookAutoconfigurationApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-river.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-stater/mitbook-stater.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-stater/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-stater/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +150,7 @@
       <workItem from="1594479768710" duration="19000" />
       <workItem from="1594479792795" duration="975000" />
       <workItem from="1594481913291" duration="1648000" />
-      <workItem from="1594520958679" duration="9435000" />
+      <workItem from="1594520958679" duration="9800000" />
     </task>
     <task id="LOCAL-00001" summary="Code compilation of distributed things framework components">
       <created>1594483387326</created>
@@ -174,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594528454093</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix bug in order insert">
+      <created>1594532301482</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1594532301482</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +227,8 @@
     <MESSAGE value="Add order Engineering" />
     <MESSAGE value="Code writing and testing of distributed transaction framework" />
     <MESSAGE value="add test sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test sql" />
+    <MESSAGE value="Fix bug in order insert" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug in order insert" />
   </component>
   <component name="WindowStateProjectService">
     <state x="224" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594483324674">
@@ -256,26 +284,6 @@
           <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java</url>
           <line>27</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

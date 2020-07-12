@@ -14,22 +14,22 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mitbook-autoconfiguration" target="1.8" />
+      <module name="mitbook-drive" target="1.8" />
       <module name="mitbook-example" target="1.8" />
       <module name="mitbook-mountain" target="1.8" />
       <module name="mitbook-order" target="1.8" />
       <module name="mitbook-product" target="1.8" />
-      <module name="mitbook-river" target="1.8" />
       <module name="mitbook-stater" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mitbook-autoconfiguration" options="-parameters" />
+      <module name="mitbook-drive" options="-parameters" />
       <module name="mitbook-example" options="-parameters" />
       <module name="mitbook-mountain" options="-parameters" />
       <module name="mitbook-order" options="-parameters" />
       <module name="mitbook-product" options="-parameters" />
-      <module name="mitbook-river" options="-parameters" />
       <module name="mitbook-stater" options="-parameters" />
     </option>
   </component>
