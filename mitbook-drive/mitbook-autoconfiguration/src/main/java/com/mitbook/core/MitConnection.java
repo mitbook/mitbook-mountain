@@ -42,7 +42,7 @@ public class MitConnection extends MitAbstractConnection {
         //从线程变量中获取全局事务ID
         String globalTransactionId = MitTransactionalHolder.get();
         
-        //没有加入到分布式事务中，使用本地的事务
+        //没有加入到分布式事务中,使用本地的事务
         if (StringUtils.isEmpty(MitTransactionalHolder.getChild())) {
             log.info("没有加入到分布式事务中,使用本地事务");
             getConnection().commit();

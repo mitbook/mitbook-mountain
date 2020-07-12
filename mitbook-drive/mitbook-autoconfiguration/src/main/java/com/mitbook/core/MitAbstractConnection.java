@@ -10,7 +10,7 @@ import java.util.Properties;
 import java.util.concurrent.Executor;
 
 /**
- * 数据库连接器抽象类
+ * 数据库连接器
  *
  * @author pengzhengfa
  */
@@ -275,12 +275,12 @@ public abstract class MitAbstractConnection implements Connection {
     }
     
     @Override
-    public <T> T unwrap(Class<T> iface) throws SQLException {
-        return connection.unwrap(iface);
+    public <T> T unwrap(Class<T> iFace) throws SQLException {
+        return connection.unwrap(iFace);
     }
     
     @Override
-    public boolean isWrapperFor(Class<?> iface) throws SQLException {
-        return connection.isWrapperFor(iface);
+    public boolean isWrapperFor(Class<?> iFace) throws SQLException {
+        return connection.isWrapperFor(iFace);
     }
 }

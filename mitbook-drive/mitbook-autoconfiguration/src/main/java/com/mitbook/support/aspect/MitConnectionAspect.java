@@ -35,7 +35,7 @@ public class MitConnectionAspect {
     public Connection cutConnectionMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         //返回数据库原生的Connection
         Connection connection = (Connection) proceedingJoinPoint.proceed();
-        //保证成我们自己的数据库连接，然后获取控制权
+        //保证成我们自己的数据库连接,然后获取控制权
         MitConnection angleConnection = new MitConnection(connection, mitGlobalTransactionManager, mitDtProperties);
         return angleConnection;
     }

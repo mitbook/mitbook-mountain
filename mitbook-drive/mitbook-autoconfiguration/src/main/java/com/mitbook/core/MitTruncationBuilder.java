@@ -18,17 +18,17 @@ public class MitTruncationBuilder {
         return this;
     }
     
-    public MitTruncationBuilder builderTransationalEnumStatus(Integer transationalEnumStatusCode) {
-        childTransaction.setTransactionalEnumStatusCode(transationalEnumStatusCode);
+    public MitTruncationBuilder builderTransactionalEnumStatus(Integer transactionalEnumStatusCode) {
+        childTransaction.setTransactionalEnumStatusCode(transactionalEnumStatusCode);
         return this;
     }
     
-    public MitTruncationBuilder buliderTransactionalTypeEunmCode(Integer transactionalTypeEunmCode) {
-        childTransaction.setTransactionalTypeEnumCode(transactionalTypeEunmCode);
+    public MitTruncationBuilder builderTransactionalTypeEnumCode(Integer transactionalTypeEnumCode) {
+        childTransaction.setTransactionalTypeEnumCode(transactionalTypeEnumCode);
         return this;
     }
     
-    public MitTruncationBuilder buliderGlobalTransactionId(String globalTransactionId) {
+    public MitTruncationBuilder builderGlobalTransactionId(String globalTransactionId) {
         childTransaction.setGlobalTransactionalId(globalTransactionId);
         return this;
     }

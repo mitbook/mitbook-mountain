@@ -72,7 +72,7 @@ public class MitTransactionalAspect {
             //把子事务对象上报到分布式事务管理中心
             mitGlobalTransactionManager.save2Redis(childTransaction);
             
-            //调用目标方法，我们需要在目标方法新开一个线程去监控redis的值是否变化来决定,本地事务是提交还是回滚
+            //调用目标方法,我们需要在目标新开一个线程去监控redis的值是否变化来决定,本地事务是提交还是回滚
             joinPoint.proceed();
             
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
@@ -108,8 +108,8 @@ public class MitTransactionalAspect {
         MitTruncationBuilder mitTruncationBuilder = new MitTruncationBuilder();
         String childTransId = MitDtUtil.generatorChildTransactionalId();
         MitTransactionalHolder.setChild(childTransId);
-        return mitTruncationBuilder.buliderTransactionalTypeEunmCode(TransactionalTypeEunmCode)
-                .builderChildTransactionalId(childTransId).builderTransationalEnumStatus(TransationalEnumStatusCode)
-                .buliderGlobalTransactionId(MitTransactionalHolder.get()).builder();
+        return mitTruncationBuilder.builderTransactionalTypeEnumCode(TransactionalTypeEunmCode)
+                .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(TransationalEnumStatusCode)
+                .builderGlobalTransactionId(MitTransactionalHolder.get()).builder();
     }
 }

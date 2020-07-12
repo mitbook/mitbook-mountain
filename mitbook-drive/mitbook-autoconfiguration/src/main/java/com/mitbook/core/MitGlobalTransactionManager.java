@@ -23,7 +23,7 @@ public class MitGlobalTransactionManager {
     /**
      * 全局事务和子事务映射关系
      */
-    public static final String GLOBAL_TRANSACTION_MAPPING_CHILDE_TRANSACTIONAL_CACHE_KEY = "ANGLE_DIST_TRANSACTIONAL:";
+    public static final String GLOBAL_TRANSACTION_MAPPING_CHILD_TRANSACTIONAL_CACHE_KEY = "MIT_DIST_TRANSACTIONAL:";
     
     
     /**
@@ -73,7 +73,7 @@ public class MitGlobalTransactionManager {
             return TransactionalEnumStatus.WAITING.getCode();
         }
         
-        //收到了begin 和end的子事务对象，但是其中有出现了rollabck,全局回滚
+        //收到了begin 和end的子事务对象,但是其中有出现了rollabck,全局回滚
         if (needRoolBack) {
             return TransactionalEnumStatus.RollBACK.getCode();
         }
@@ -88,7 +88,7 @@ public class MitGlobalTransactionManager {
     
     
     /**
-     * 方法实现说明:把子事务对象保存到redis
+     * 把子事务对象保存到redis
      *
      * @param childTransaction 子事务对象
      * @exception: 可能抛出redis操作存储异常
@@ -96,13 +96,12 @@ public class MitGlobalTransactionManager {
     public void save2Redis(ChildTransaction childTransaction) throws Exception {
         
         //从子事务中获取全局事务ID
-        String globalTransationalId = childTransaction.getGlobalTransactionalId();
+        String globalTranslationalId = childTransaction.getGlobalTransactionalId();
         
         //把事务对象保存到redis中
         redisTemplate.opsForHash()
-                .put(generatorHashKey(globalTransationalId), childTransaction.getChildTransactionalId(),
+                .put(generatorHashKey(globalTranslationalId), childTransaction.getChildTransactionalId(),
                         JSONObject.toJSON(childTransaction).toString());
-        
     }
     
     /**
@@ -110,8 +109,6 @@ public class MitGlobalTransactionManager {
      * @return: redis hash结构的的   hashKey
      */
     private String generatorHashKey(String globalTransactionId) {
-        return GLOBAL_TRANSACTION_MAPPING_CHILDE_TRANSACTIONAL_CACHE_KEY + globalTransactionId;
+        return GLOBAL_TRANSACTION_MAPPING_CHILD_TRANSACTIONAL_CACHE_KEY + globalTransactionId;
     }
-    
-    
 }
