@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/mitbook-autoconfiguration.iml" filepath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/mitbook-autoconfiguration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mitbook-example/mitbook-example.iml" filepath="$PROJECT_DIR$/mitbook-example/mitbook-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/mitbook-mountain.iml" filepath="$PROJECT_DIR$/mitbook-mountain.iml" />
       <module fileurl="file://$PROJECT_DIR$/mitbook-river/mitbook-river.iml" filepath="$PROJECT_DIR$/mitbook-river/mitbook-river.iml" />
       <module fileurl="file://$PROJECT_DIR$/mitbook-river/mitbook-stater/mitbook-stater.iml" filepath="$PROJECT_DIR$/mitbook-river/mitbook-stater/mitbook-stater.iml" />

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mitbook-mountain" />
+        <module name="mitbook-example" />
         <module name="mitbook-autoconfiguration" />
         <module name="mitbook-river" />
         <module name="mitbook-stater" />
@@ -14,6 +15,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mitbook-autoconfiguration" target="1.8" />
+      <module name="mitbook-example" target="1.8" />
       <module name="mitbook-mountain" target="1.8" />
       <module name="mitbook-river" target="1.8" />
       <module name="mitbook-stater" target="1.8" />
@@ -22,6 +24,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="mitbook-autoconfiguration" options="-parameters" />
+      <module name="mitbook-example" options="-parameters" />
       <module name="mitbook-mountain" options="-parameters" />
       <module name="mitbook-river" options="-parameters" />
       <module name="mitbook-stater" options="-parameters" />
