@@ -118,7 +118,7 @@
       <workItem from="1594481913291" duration="1648000" />
       <workItem from="1594520958679" duration="9800000" />
       <workItem from="1594532468971" duration="1371000" />
-      <workItem from="1594542070216" duration="2357000" />
+      <workItem from="1594542070216" duration="2637000" />
     </task>
     <task id="LOCAL-00001" summary="Code compilation of distributed things framework components">
       <created>1594483387326</created>
@@ -190,7 +190,35 @@
       <option name="project" value="LOCAL" />
       <updated>1594545428072</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="delete code">
+      <created>1594545481158</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1594545481158</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Method naming optimization">
+      <created>1594545557427</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1594545557427</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Method naming optimization">
+      <created>1594545618390</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1594545618390</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Method naming optimization">
+      <created>1594545663435</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1594545663435</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,6 +247,7 @@
     <MESSAGE value="Fix bug in order insert" />
     <MESSAGE value="Update project name" />
     <MESSAGE value="delete file" />
+    <MESSAGE value="delete code" />
     <MESSAGE value="Method naming optimization" />
     <option name="LAST_COMMIT_MESSAGE" value="Method naming optimization" />
   </component>
@@ -267,11 +296,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/controller/ProductInfoController.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java</url>
           <line>27</line>

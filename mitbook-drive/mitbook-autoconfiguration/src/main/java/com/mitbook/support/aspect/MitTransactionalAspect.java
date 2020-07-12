@@ -62,7 +62,7 @@ public class MitTransactionalAspect {
         }
         
         //使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WAFTING状态)
-        ChildTransaction childTransaction = builderChildTransactionObj(transactionalTypeEnum.getCode(),
+        ChildTransaction childTransaction = builderChildTransaction(transactionalTypeEnum.getCode(),
                 TransactionalEnumStatus.WAITING.getCode());
         
         try {
@@ -101,13 +101,13 @@ public class MitTransactionalAspect {
     /**
      * 构造子事务对象
      */
-    private ChildTransaction builderChildTransactionObj(Integer TransactionalTypeEnumCode,
-            Integer TransactionalEnumStatusCode) {
+    private ChildTransaction builderChildTransaction(Integer transactionalTypeEnumCode,
+            Integer transactionalEnumStatusCode) {
         MitTruncationBuilder mitTruncationBuilder = new MitTruncationBuilder();
         String childTransId = MitDtUtil.generatorChildTransactionalId();
         MitTransactionalHolder.setChild(childTransId);
-        return mitTruncationBuilder.builderTransactionalTypeEnumCode(TransactionalTypeEnumCode)
-                .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(TransactionalEnumStatusCode)
+        return mitTruncationBuilder.builderTransactionalTypeEnumCode(transactionalTypeEnumCode)
+                .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(transactionalEnumStatusCode)
                 .builderGlobalTransactionId(MitTransactionalHolder.get()).builder();
     }
 }
