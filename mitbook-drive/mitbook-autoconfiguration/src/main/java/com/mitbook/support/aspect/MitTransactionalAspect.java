@@ -68,21 +68,21 @@ public class MitTransactionalAspect {
         try {
             
             //把子事务对象上报到分布式事务管理中心
-            mitGlobalTransactionManager.save2Redis(childTransaction);
+            mitGlobalTransactionManager.saveToRedis(childTransaction);
             
             //调用目标方法,我们需要在目标新开一个线程去监控redis的值是否变化来决定,本地事务是提交还是回滚
             joinPoint.proceed();
             
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
             childTransaction.setTransactionalEnumStatusCode(TransactionalEnumStatus.COMMIT.getCode());
-            mitGlobalTransactionManager.save2Redis(childTransaction);
+            mitGlobalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
             log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(),
                     childTransaction.getChildTransactionalId(), throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
             childTransaction.setTransactionalEnumStatusCode(TransactionalEnumStatus.RollBACK.getCode());
-            mitGlobalTransactionManager.save2Redis(childTransaction);
+            mitGlobalTransactionManager.saveToRedis(childTransaction);
             throw new RuntimeException(throwable.getMessage());
         }
         
