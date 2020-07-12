@@ -21,9 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ee7c843b-5a7c-41e1-af8b-dc0c29d39d9d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-drive/mitbook-autoconfiguration/src/main/java/com/mitbook/core/MitConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MitbookProductApplication">
+  <component name="RunManager" selected="Spring Boot.MitbookOrderApplication">
     <configuration name="MitbookOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mitbook-order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mitbook.MitbookOrderApplication" />
@@ -121,7 +118,7 @@
       <workItem from="1594481913291" duration="1648000" />
       <workItem from="1594520958679" duration="9800000" />
       <workItem from="1594532468971" duration="1371000" />
-      <workItem from="1594542070216" duration="6535000" />
+      <workItem from="1594542070216" duration="7747000" />
     </task>
     <task id="LOCAL-00001" summary="Code compilation of distributed things framework components">
       <created>1594483387326</created>
@@ -228,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594545746274</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Method naming optimization">
+      <created>1594555258774</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1594555258774</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
