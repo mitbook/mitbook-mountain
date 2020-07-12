@@ -1,17 +1,15 @@
 package com.mitbook.support.enumaration;
-
 /**
  * 分布式事务中,事务状态枚举描述
- *
  * @author pengzhengfa
  */
 public enum TransactionalEnumStatus {
 
-    COMMIT(1, "COMMIT"),
+    COMMIT(200,"COMMIT"),
 
-    WAITING(0, "WAITING"),
+    WAITING(201,"WAITING"),
 
-    RollBACK(-1, "RollBACK");
+    RollBACK(500,"RollBACK");
 
     public Integer getCode() {
         return code;
@@ -25,14 +23,14 @@ public enum TransactionalEnumStatus {
 
     private String msg;
 
-    TransactionalEnumStatus(Integer code, String msg) {
-        this.code = code;
-        this.msg = msg;
+    TransactionalEnumStatus(Integer code, String msg){
+        this.code=code;
+        this.msg=msg;
     }
 
-    public static TransactionalEnumStatus getbycode(Integer code) {
-        for (TransactionalEnumStatus transactionalEnumStatus : values()) {
-            if (transactionalEnumStatus.getCode() == code) {
+    public static TransactionalEnumStatus getByCode(Integer code) {
+        for (TransactionalEnumStatus transactionalEnumStatus :values()) {
+            if(transactionalEnumStatus.getCode() == code) {
                 return transactionalEnumStatus;
             }
         }

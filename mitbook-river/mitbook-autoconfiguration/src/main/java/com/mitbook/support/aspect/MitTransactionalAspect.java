@@ -1,11 +1,10 @@
 package com.mitbook.support.aspect;
-
-import com.mitbook.core.ChildTransaction;
 import com.mitbook.core.MitGlobalTransactionManager;
 import com.mitbook.core.MitTruncationBuilder;
+import com.mitbook.core.ChildTransaction;
 import com.mitbook.support.anno.MitTransactional;
-import com.mitbook.support.enumaration.TransactionalEnumStatus;
 import com.mitbook.support.enumaration.TransactionalTypeEnum;
+import com.mitbook.support.enumaration.TransactionalEnumStatus;
 import com.mitbook.support.holder.MitTransactionalHolder;
 import com.mitbook.support.utils.MitDtUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -17,12 +16,9 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.redis.core.RedisTemplate;
-
 import java.lang.reflect.Method;
-
 /**
  * 事务切面
- *
  * @author pengzhengfa
  */
 @Aspect
@@ -37,10 +33,7 @@ public class MitTransactionalAspect {
     private RedisTemplate redisTemplate;
 
     @Pointcut("@annotation(com.mitbook.support.anno.MitTransactional)")
-    public void pointCut() {
-    }
-
-    ;
+    public void pointCut() {};
 
     @Around("pointCut()")
     public void invoke(ProceedingJoinPoint joinPoint) throws Exception {
@@ -54,7 +47,7 @@ public class MitTransactionalAspect {
         TransactionalTypeEnum transactionalTypeEnum = mitTransactional.transType();
 
         //判断是不是分布式事务开始节点
-        if (transactionalTypeEnum.getCode() == TransactionalTypeEnum.BEGIN.getCode()) {
+        if(transactionalTypeEnum.getCode() == TransactionalTypeEnum.BEGIN.getCode()) {
 
             //生成全局唯一ID
             String gloableTransactionId = MitDtUtil.generatorGlobalTransactionalId();
@@ -75,13 +68,13 @@ public class MitTransactionalAspect {
             joinPoint.proceed();
 
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
-            childTransaction.setTransationalEnumStatusCode(TransactionalEnumStatus.COMMIT.getCode());
+            childTransaction.setTransactionalEnumStatusCode(TransactionalEnumStatus.COMMIT.getCode());
             mitGlobalTransactionManager.save2Redis(childTransaction);
 
         } catch (Throwable throwable) {
-            log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(), childTransaction.getChildTransactionalId(), throwable.getStackTrace());
+            log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(), childTransaction.getChildTransactionalId(),throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
-            childTransaction.setTransationalEnumStatusCode(TransactionalEnumStatus.RollBACK.getCode());
+            childTransaction.setTransactionalEnumStatusCode(TransactionalEnumStatus.RollBACK.getCode());
             mitGlobalTransactionManager.save2Redis(childTransaction);
             throw new RuntimeException(throwable.getMessage());
         }
@@ -90,25 +83,24 @@ public class MitTransactionalAspect {
 
     /**
      * 获取目标方法
-     *
      * @param proceedingJoinPoint
      */
-    private Method getTargetMethod(ProceedingJoinPoint proceedingJoinPoint) {
-        MethodSignature signature = (MethodSignature) proceedingJoinPoint.getSignature();
+    private Method getTargetMethod(ProceedingJoinPoint proceedingJoinPoint){
+        MethodSignature  signature = (MethodSignature)proceedingJoinPoint.getSignature();
         return signature.getMethod();
     }
 
     /**
      * 构造子事务对象
      */
-    private ChildTransaction builderChildTransactionObj(Integer TransactionalTypeEunmCode, Integer TransationalEnumStatusCode) {
+    private ChildTransaction builderChildTransactionObj(Integer TransactionalTypeEunmCode , Integer TransationalEnumStatusCode){
         MitTruncationBuilder mitTruncationBuilder = new MitTruncationBuilder();
         String childTransId = MitDtUtil.generatorChildTransactionalId();
         MitTransactionalHolder.setChild(childTransId);
         return mitTruncationBuilder.buliderTransactionalTypeEunmCode(TransactionalTypeEunmCode)
-                .builderChildTransactionalId(childTransId)
-                .builderTransationalEnumStatus(TransationalEnumStatusCode)
-                .buliderGlobalTransactionId(MitTransactionalHolder.get())
-                .builder();
+                              .builderChildTransactionalId(childTransId)
+                              .builderTransationalEnumStatus(TransationalEnumStatusCode)
+                              .buliderGlobalTransactionId(MitTransactionalHolder.get())
+                              .builder();
     }
 }

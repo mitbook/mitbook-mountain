@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/mitbook-river/mitbook-stater/pom.xml" />
         <option value="$PROJECT_DIR$/mitbook-example/pom.xml" />
         <option value="$PROJECT_DIR$/mitbook-order/pom.xml" />
+        <option value="$PROJECT_DIR$/mitbook-product/pom.xml" />
+        <option value="$PROJECT_DIR$/mitbook-example/mitbook-order/pom.xml" />
       </list>
     </option>
   </component>

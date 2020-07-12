@@ -13,26 +13,65 @@
     <version>1.0</version>
     <name>mitbook-example</name>
     <description>mitbook-example</description>
-
+    <packaging>pom</packaging>
+    <modules>
+        <module>mitbook-product</module>
+        <module>mitbook-order</module>
+    </modules>
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
+    
     <dependencies>
+        <!--redis依赖的jar包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+    
+        <!--springmvc-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.mybatis.spring.boot</groupId>
-            <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.3</version>
-        </dependency>
-
+    
+        <!--mysql驱动包-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    
+        <!--mybatis-spring整合包-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.0.0</version>
+        </dependency>
+    
+        <!--aop的包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+    
+        <!--属性映射的包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    
+        <!--德鲁伊数据源-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.8</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -51,7 +90,7 @@
             </exclusions>
         </dependency>
     </dependencies>
-
+    
     <build>
         <plugins>
             <plugin>

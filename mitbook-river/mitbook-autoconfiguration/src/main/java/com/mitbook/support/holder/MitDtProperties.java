@@ -3,10 +3,11 @@ package com.mitbook.support.holder;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+
 /**
- * @author pengzhengfa
+ * Created by smlz on 2019/7/28.
  */
-@ConfigurationProperties(prefix = "mit.dt")
+@ConfigurationProperties(prefix = "angle.dt")
 @Data
 public class MitDtProperties {
 

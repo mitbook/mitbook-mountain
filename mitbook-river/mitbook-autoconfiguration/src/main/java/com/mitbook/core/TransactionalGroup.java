@@ -1,12 +1,8 @@
 package com.mitbook.core;
-
 import lombok.Data;
-
 import java.util.List;
-
 /**
  * 分布式事务组对象
- *
  * @author pengzhengfa
  */
 @Data

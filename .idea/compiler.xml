@@ -7,9 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mitbook-order" />
-        <module name="mitbook-example" />
-        <module name="mitbook-river" />
-        <module name="mitbook-mountain" />
+        <module name="mitbook-product" />
         <module name="mitbook-stater" />
         <module name="mitbook-autoconfiguration" />
       </profile>
@@ -19,6 +17,7 @@
       <module name="mitbook-example" target="1.8" />
       <module name="mitbook-mountain" target="1.8" />
       <module name="mitbook-order" target="1.8" />
+      <module name="mitbook-product" target="1.8" />
       <module name="mitbook-river" target="1.8" />
       <module name="mitbook-stater" target="1.8" />
     </bytecodeTargetLevel>
@@ -29,6 +28,7 @@
       <module name="mitbook-example" options="-parameters" />
       <module name="mitbook-mountain" options="-parameters" />
       <module name="mitbook-order" options="-parameters" />
+      <module name="mitbook-product" options="-parameters" />
       <module name="mitbook-river" options="-parameters" />
       <module name="mitbook-stater" options="-parameters" />
     </option>

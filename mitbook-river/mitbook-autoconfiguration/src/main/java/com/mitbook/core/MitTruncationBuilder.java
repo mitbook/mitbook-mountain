@@ -1,8 +1,6 @@
 package com.mitbook.core;
-
 /**
  * MitTruncationBuilder构建子事务对象
- *
  * @author pengzhengfa
  */
 public class MitTruncationBuilder {
@@ -13,18 +11,18 @@ public class MitTruncationBuilder {
         childTransaction = new ChildTransaction();
     }
 
-    public MitTruncationBuilder builderChildTransactionalId(String childTransactionalId) {
+    public MitTruncationBuilder builderChildTransactionalId(String childTransactionalId){
         childTransaction.setChildTransactionalId(childTransactionalId);
         return this;
     }
 
     public MitTruncationBuilder builderTransationalEnumStatus(Integer transationalEnumStatusCode) {
-        childTransaction.setTransationalEnumStatusCode(transationalEnumStatusCode);
+        childTransaction.setTransactionalEnumStatusCode(transationalEnumStatusCode);
         return this;
     }
 
     public MitTruncationBuilder buliderTransactionalTypeEunmCode(Integer transactionalTypeEunmCode) {
-        childTransaction.setTransactionalTypeEunmCode(transactionalTypeEunmCode);
+        childTransaction.setTransactionalTypeEnumCode(transactionalTypeEunmCode);
         return this;
     }
 

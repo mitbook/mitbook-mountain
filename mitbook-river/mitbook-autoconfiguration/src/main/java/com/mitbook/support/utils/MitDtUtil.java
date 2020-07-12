@@ -1,7 +1,5 @@
 package com.mitbook.support.utils;
-
 import java.util.UUID;
-
 /**
  * @author pengzhengfa
  */
