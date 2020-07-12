@@ -1,4 +1,5 @@
 package com.mitbook.support.aspect;
+
 import com.mitbook.core.MitConnection;
 import com.mitbook.core.MitGlobalTransactionManager;
 import com.mitbook.support.holder.MitDtProperties;
@@ -7,23 +8,27 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
+
 import java.sql.Connection;
+
 /**
  * 用于切入数据源 getConnection()方法的
+ *
  * @author pengzhengfa
  */
 @Aspect
 @Order(1)
-    public class MitConnectionAspect {
-
+public class MitConnectionAspect {
+    
     @Autowired
     private MitGlobalTransactionManager mitGlobalTransactionManager;
-
+    
     @Autowired
     private MitDtProperties mitDtProperties;
-
+    
     /**
      * 环绕通知
+     *
      * @param proceedingJoinPoint
      */
     @Around("execution(* javax.sql.DataSource.getConnection(..))")

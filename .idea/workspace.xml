@@ -20,9 +20,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee7c843b-5a7c-41e1-af8b-dc0c29d39d9d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/doc/mitbook-order.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/mitbook-stock.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/OrderInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/OrderInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/ProductStockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/entity/ProductStockInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/mapper/OrderInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/mapper/OrderInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/IOrderInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/IOrderInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/controller/ProductInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/controller/ProductInfoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/entity/ProductStockInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/entity/ProductStockInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/mapper/ProductInfoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/mapper/ProductInfoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/IProductStockInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/IProductStockInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/ProductStockServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/service/ProductStockServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/config/MitDtAutoConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/mitbook-river/mitbook-autoconfiguration/src/main/java/com/mitbook/support/enumaration/TransactionalEnumStatus.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +72,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/doc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -70,11 +82,11 @@
       <recent name="$PROJECT_DIR$/mitbook-river" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\mitbook-mountain\mitbook-example\mitbook-product\src\main\java\com\mitbook" />
+      <recent name="D:\project\mitbook-mountain\mitbook-example\mitbook-order\src\main\java\com\mitbook" />
       <recent name="D:\project\mitbook-mountain\doc" />
       <recent name="D:\project\mitbook-mountain\mitbook-river\mitbook-autoconfiguration\src\main" />
-      <recent name="D:\project\mitbook-mountain\mitbook-example\mitbook-product\src\main\java\com\mitbook" />
       <recent name="D:\project\mitbook-mountain\mitbook-example\mitbook-order\src\main\resources\mapper" />
-      <recent name="D:\project\mitbook-mountain\mitbook-example\mitbook-order\src\main\java\com\mitbook" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -89,7 +101,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MitbookOrderApplication">
+  <component name="RunManager" selected="Spring Boot.MitbookProductApplication">
     <configuration name="MitbookOrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="mitbook-order" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.mitbook.MitbookOrderApplication" />
@@ -118,7 +130,7 @@
       <workItem from="1594479768710" duration="19000" />
       <workItem from="1594479792795" duration="975000" />
       <workItem from="1594481913291" duration="1648000" />
-      <workItem from="1594520958679" duration="7248000" />
+      <workItem from="1594520958679" duration="9435000" />
     </task>
     <task id="LOCAL-00001" summary="Code compilation of distributed things framework components">
       <created>1594483387326</created>
@@ -155,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1594528012329</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add test sql">
+      <created>1594528454093</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1594528454093</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -180,7 +199,8 @@
     <MESSAGE value="Add test code" />
     <MESSAGE value="Add order Engineering" />
     <MESSAGE value="Code writing and testing of distributed transaction framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code writing and testing of distributed transaction framework" />
+    <MESSAGE value="add test sql" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test sql" />
   </component>
   <component name="WindowStateProjectService">
     <state x="224" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1594483324674">
@@ -223,5 +243,41 @@
       <screen x="80" y="23" width="1360" height="877" />
     </state>
     <state x="425" y="213" width="670" height="676" key="search.everywhere.popup/80.23.1360.877@80.23.1360.877" timestamp="1594482773338" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-product/src/main/java/com/mitbook/controller/ProductInfoController.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/controller/OrderInfoController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mitbook-example/mitbook-order/src/main/java/com/mitbook/service/OrderInfoServiceImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

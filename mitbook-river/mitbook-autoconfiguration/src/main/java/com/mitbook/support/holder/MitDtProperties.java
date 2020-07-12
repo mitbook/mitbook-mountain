@@ -10,10 +10,10 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "angle.dt")
 @Data
 public class MitDtProperties {
-
+    
     private long initialDelay = 1;
-
+    
     private long delay = 1;
-
+    
     private Integer watingTime = 5;
 }

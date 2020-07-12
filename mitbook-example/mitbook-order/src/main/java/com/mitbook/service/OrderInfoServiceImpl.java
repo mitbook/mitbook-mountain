@@ -48,6 +48,7 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
         if ("error".equals(response.getBody())) {
             throw new RuntimeException("调用远程服务异常" + url + order.getProductId());
         }
-//        System.out.println(1/0);
+/*
+        System.out.println(1/0);*/
     }
 }
