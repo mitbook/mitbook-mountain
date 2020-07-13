@@ -95,7 +95,7 @@ public class MitGlobalTransactionManager {
      */
     public void saveToRedis(ChildTransaction childTransaction) throws Exception {
         
-        //从子事务中获取全局事务ID
+        //从子事务中获取全局事务id
         String globalTranslationalId = childTransaction.getGlobalTransactionalId();
         
         //把事务对象保存到redis中
