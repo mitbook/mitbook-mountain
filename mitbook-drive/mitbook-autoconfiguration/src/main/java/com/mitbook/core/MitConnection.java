@@ -70,7 +70,7 @@ public class MitConnection extends MitAbstractConnection {
                         log.info("回滚分布式事务:{}", globalTransactionId);
                         globalRollBack(getConnection(), pool);
                     case WAITING:
-                        if (count.addAndGet(getMitDtProperties().getDelay()) > getMitDtProperties().getWatingTime()) {
+                        if (count.addAndGet(getMitDtProperties().getDelay()) > getMitDtProperties().getWaitingTime()) {
                             globalRollBack(getConnection(), pool);
                         }
                 }

@@ -14,5 +14,5 @@ public class MitDtProperties {
     
     private long delay = 1;
     
-    private Integer watingTime = 5;
+    private Integer waitingTime = 5;
 }
