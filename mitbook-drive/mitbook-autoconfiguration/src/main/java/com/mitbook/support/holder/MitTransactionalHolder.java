@@ -1,6 +1,8 @@
 package com.mitbook.support.holder;
+
 /**
  * 线程局部变量持有器,用户同一个线程传递全局事务ID
+ *
  * @author pengzhengfa
  */
 public class MitTransactionalHolder {

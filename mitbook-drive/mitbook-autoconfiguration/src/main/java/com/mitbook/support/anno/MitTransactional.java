@@ -8,6 +8,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
+ * 事务注解
+ *
  * @author pengzhengfa
  */
 @Target({ElementType.METHOD})

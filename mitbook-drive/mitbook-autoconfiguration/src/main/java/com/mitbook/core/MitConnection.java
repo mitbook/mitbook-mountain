@@ -103,8 +103,10 @@ public class MitConnection extends MitAbstractConnection {
     public void close() throws SQLException {
     
     }
+    
     /**
      * 全局事务提交
+     *
      * @param connection
      * @param pool
      */
@@ -122,8 +124,10 @@ public class MitConnection extends MitAbstractConnection {
         }
         pool.shutdownNow();
     }
+    
     /**
      * 分支事务回滚
+     *
      * @param connection
      * @param pool
      */

@@ -40,6 +40,7 @@ public class MitTransactionalAspect {
     public void pointCut() {
     
     }
+    
     @Around("pointCut()")
     public void invoke(ProceedingJoinPoint joinPoint) throws Exception {
         
