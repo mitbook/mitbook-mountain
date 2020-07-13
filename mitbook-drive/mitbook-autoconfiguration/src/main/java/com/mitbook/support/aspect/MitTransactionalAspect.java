@@ -55,7 +55,7 @@ public class MitTransactionalAspect {
         //判断是不是分布式事务开始节点
         if (transactionalTypeEnum.getCode() == TransactionalTypeEnum.BEGIN.getCode()) {
             
-            //生成全局唯一ID
+            //生成全局唯一id
             String gableTransactionId = MitDtUtil.generatorGlobalTransactionalId();
             
             //放入线程变量中
