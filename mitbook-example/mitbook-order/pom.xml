@@ -24,14 +24,10 @@
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.mitbook</groupId>
-            <artifactId>mitbook-example</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+            <version>1.18.12</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
