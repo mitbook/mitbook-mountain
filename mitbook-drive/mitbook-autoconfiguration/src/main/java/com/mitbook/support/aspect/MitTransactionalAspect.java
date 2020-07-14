@@ -75,14 +75,14 @@ public class MitTransactionalAspect {
             joinPoint.proceed();
             
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
-            childTransaction.setTransactionalEnumStatusCode(TransactionalEnumStatus.COMMIT.getCode());
+            childTransaction.setTransactionalStatusCode(TransactionalEnumStatus.COMMIT.getCode());
             mitGlobalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
             log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(),
                     childTransaction.getChildTransactionalId(), throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
-            childTransaction.setTransactionalEnumStatusCode(TransactionalEnumStatus.RollBACK.getCode());
+            childTransaction.setTransactionalStatusCode(TransactionalEnumStatus.RollBACK.getCode());
             mitGlobalTransactionManager.saveToRedis(childTransaction);
             throw new RuntimeException(throwable.getMessage());
         }

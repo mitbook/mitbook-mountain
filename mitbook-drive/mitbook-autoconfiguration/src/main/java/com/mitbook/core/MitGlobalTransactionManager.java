@@ -53,16 +53,16 @@ public class MitGlobalTransactionManager {
                     .parseObject(childTransMap.get(childTransId), ChildTransaction.class);
             
             //只要子事务其中一个出现rollback,分布式事务回滚
-            if (childTransaction.getTransactionalEnumStatusCode() == TransactionalEnumStatus.RollBACK.getCode()) {
+            if (childTransaction.getTransactionalStatusCode() == TransactionalEnumStatus.RollBACK.getCode()) {
                 needRoolBack = true;
             }
             //统计commit的个数
-            if (childTransaction.getTransactionalEnumStatusCode() == TransactionalEnumStatus.COMMIT.getCode()) {
+            if (childTransaction.getTransactionalStatusCode() == TransactionalEnumStatus.COMMIT.getCode()) {
                 commitCount++;
             }
             
-            if (childTransaction.getTransactionalTypeEnumCode() == TransactionalTypeEnum.BEGIN.getCode()
-                    || childTransaction.getTransactionalTypeEnumCode() == TransactionalTypeEnum.END.getCode()) {
+            if (childTransaction.getTransactionalTypeCode() == TransactionalTypeEnum.BEGIN.getCode()
+                    || childTransaction.getTransactionalTypeCode() == TransactionalTypeEnum.END.getCode()) {
                 beginAndEnd++;
             }
             

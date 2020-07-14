@@ -25,12 +25,12 @@ public class ChildTransaction implements Serializable {
     /**
      * 子事务状态
      */
-    private Integer TransactionalEnumStatusCode;
+    private Integer TransactionalStatusCode;
     
     /**
      * 子事务类型
      */
-    private Integer TransactionalTypeEnumCode;
+    private Integer TransactionalTypeCode;
     
     
 }

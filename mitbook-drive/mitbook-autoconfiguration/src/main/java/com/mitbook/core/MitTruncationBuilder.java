@@ -19,12 +19,12 @@ public class MitTruncationBuilder {
     }
     
     public MitTruncationBuilder builderTransactionalEnumStatus(Integer transactionalEnumStatusCode) {
-        childTransaction.setTransactionalEnumStatusCode(transactionalEnumStatusCode);
+        childTransaction.setTransactionalStatusCode(transactionalEnumStatusCode);
         return this;
     }
     
     public MitTruncationBuilder builderTransactionalTypeEnumCode(Integer transactionalTypeEnumCode) {
-        childTransaction.setTransactionalTypeEnumCode(transactionalTypeEnumCode);
+        childTransaction.setTransactionalTypeCode(transactionalTypeEnumCode);
         return this;
     }
     
