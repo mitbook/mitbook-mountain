@@ -1,6 +1,6 @@
 package com.mitbook.support.anno;
 
-import com.mitbook.support.marker.ConfigMarker;
+import com.mitbook.support.marker.MitConfigMarker;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(ConfigMarker.class)
+@Import(MitConfigMarker.class)
 public @interface EnableMitDistributedTransactional {
 
 }

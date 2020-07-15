@@ -5,6 +5,6 @@ package com.mitbook.support.marker;
  *
  * @author pengzhengfa
  */
-public class ConfigMarker {
+public class MitConfigMarker {
 
 }
