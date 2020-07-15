@@ -1,16 +1,15 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 远程mysql
+Source Server         : mitbook
 Source Server Version : 50729
-Source Host           : 192.168.2.102:3306
+Source Host           : 127.0.0.1:3306
 Source Database       : mitbook-stock
 
 Target Server Type    : MYSQL
 Target Server Version : 50729
 File Encoding         : 65001
 
-Date: 2020-07-12 12:33:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
