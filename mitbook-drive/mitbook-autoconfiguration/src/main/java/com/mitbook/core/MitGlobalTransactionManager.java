@@ -1,8 +1,8 @@
 package com.mitbook.core;
 
 import com.alibaba.fastjson.JSONObject;
-import com.mitbook.support.enumaration.TransactionalTypeEnum;
-import com.mitbook.support.enumaration.TransactionalEnumStatus;
+import com.mitbook.support.enumeration.TransactionalType;
+import com.mitbook.support.enumeration.TransactionalStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -53,16 +53,16 @@ public class MitGlobalTransactionManager {
                     .parseObject(childTransMap.get(childTransId), ChildTransaction.class);
             
             //只要子事务其中一个出现rollback,分布式事务回滚
-            if (childTransaction.getTransactionalStatusCode() == TransactionalEnumStatus.RollBACK.getCode()) {
+            if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.RollBACK.getCode()) {
                 needRoolBack = true;
             }
             //统计commit的个数
-            if (childTransaction.getTransactionalStatusCode() == TransactionalEnumStatus.COMMIT.getCode()) {
+            if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.COMMIT.getCode()) {
                 commitCount++;
             }
             
-            if (childTransaction.getTransactionalTypeCode() == TransactionalTypeEnum.BEGIN.getCode()
-                    || childTransaction.getTransactionalTypeCode() == TransactionalTypeEnum.END.getCode()) {
+            if (childTransaction.getTransactionalTypeCode() == TransactionalType.BEGIN.getCode()
+                    || childTransaction.getTransactionalTypeCode() == TransactionalType.END.getCode()) {
                 beginAndEnd++;
             }
             
@@ -70,20 +70,20 @@ public class MitGlobalTransactionManager {
         
         //没有收到begin 和end 的二个子事务
         if (beginAndEnd != 2) {
-            return TransactionalEnumStatus.WAITING.getCode();
+            return TransactionalStatus.WAITING.getCode();
         }
         
         //收到了begin 和end的子事务对象,但是其中有出现了rollabck,全局回滚
         if (needRoolBack) {
-            return TransactionalEnumStatus.RollBACK.getCode();
+            return TransactionalStatus.RollBACK.getCode();
         }
         
         //若所有的子事务都是commit的
         if (childTransMap.size() == commitCount) {
-            return TransactionalEnumStatus.COMMIT.getCode();
+            return TransactionalStatus.COMMIT.getCode();
         }
         
-        return TransactionalEnumStatus.WAITING.getCode();
+        return TransactionalStatus.WAITING.getCode();
     }
     
     

@@ -2,7 +2,7 @@ package com.mitbook.service;
 
 import com.mitbook.mapper.ProductInfoMapper;
 import com.mitbook.support.anno.MitTransactional;
-import com.mitbook.support.enumaration.TransactionalTypeEnum;
+import com.mitbook.support.enumeration.TransactionalType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,7 +18,7 @@ public class ProductStockServiceImpl implements IProductStockInfoService {
     
     @Override
     @Transactional
-    @MitTransactional(transType = TransactionalTypeEnum.END)
+    @MitTransactional(transType = TransactionalType.END)
     public void updateProductStock(String productId) {
         productInfoMapper.updateProductInfo(productId);
     }

@@ -1,11 +1,11 @@
-package com.mitbook.support.enumaration;
+package com.mitbook.support.enumeration;
 
 /**
  * 分布式事务中子事务状态描述枚举
  *
  * @author pengzhengfa
  */
-public enum TransactionalTypeEnum {
+public enum TransactionalType {
     
     BEGIN(1, "事务开始,需要创建事务组对象"),
     
@@ -26,7 +26,7 @@ public enum TransactionalTypeEnum {
     
     private String msg;
     
-    TransactionalTypeEnum(Integer code, String msg) {
+    TransactionalType(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }

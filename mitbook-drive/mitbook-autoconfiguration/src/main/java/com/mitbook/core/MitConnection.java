@@ -1,6 +1,6 @@
 package com.mitbook.core;
 
-import com.mitbook.support.enumaration.TransactionalEnumStatus;
+import com.mitbook.support.enumeration.TransactionalStatus;
 import com.mitbook.support.holder.MitDtProperties;
 import com.mitbook.support.holder.MitTransactionalHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -59,10 +59,10 @@ public class MitConnection extends MitAbstractConnection {
                 //轮询的去监控redis的值的变化
                 Integer globalTransStatus = getMitGlobalTransactionManager()
                         .calChildTransactionStatus(globalTransactionId);
-                TransactionalEnumStatus transactionalEnumStatus = TransactionalEnumStatus.getByCode(globalTransStatus);
+                TransactionalStatus transactionalStatus = TransactionalStatus.getByCode(globalTransStatus);
                 log.info("分布式事务:{}的监控值:{}", globalTransactionId, globalTransStatus);
                 
-                switch (transactionalEnumStatus) {
+                switch (transactionalStatus) {
                     case COMMIT:
                         log.info("提交分布式事务:{}", globalTransactionId);
                         globalCommit(getConnection(), pool);

@@ -4,8 +4,8 @@ import com.mitbook.core.MitGlobalTransactionManager;
 import com.mitbook.core.MitTruncationBuilder;
 import com.mitbook.core.ChildTransaction;
 import com.mitbook.support.anno.MitTransactional;
-import com.mitbook.support.enumaration.TransactionalTypeEnum;
-import com.mitbook.support.enumaration.TransactionalEnumStatus;
+import com.mitbook.support.enumeration.TransactionalType;
+import com.mitbook.support.enumeration.TransactionalStatus;
 import com.mitbook.support.holder.MitTransactionalHolder;
 import com.mitbook.support.utils.MitDtUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -50,10 +50,10 @@ public class MitTransactionalAspect {
         MitTransactional mitTransactional = targetMethod.getAnnotation(MitTransactional.class);
         
         //获取注解属性对象
-        TransactionalTypeEnum transactionalTypeEnum = mitTransactional.transType();
+        TransactionalType transactionalType = mitTransactional.transType();
         
         //判断是不是分布式事务开始节点
-        if (transactionalTypeEnum.getCode() == TransactionalTypeEnum.BEGIN.getCode()) {
+        if (transactionalType.getCode() == TransactionalType.BEGIN.getCode()) {
             
             //生成全局唯一id
             String gableTransactionId = MitDtUtil.generatorGlobalTransactionalId();
@@ -63,8 +63,8 @@ public class MitTransactionalAspect {
         }
         
         //使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WAFTING状态)
-        ChildTransaction childTransaction = builderChildTransaction(transactionalTypeEnum.getCode(),
-                TransactionalEnumStatus.WAITING.getCode());
+        ChildTransaction childTransaction = builderChildTransaction(transactionalType.getCode(),
+                TransactionalStatus.WAITING.getCode());
         
         try {
             
@@ -75,14 +75,14 @@ public class MitTransactionalAspect {
             joinPoint.proceed();
             
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
-            childTransaction.setTransactionalStatusCode(TransactionalEnumStatus.COMMIT.getCode());
+            childTransaction.setTransactionalStatusCode(TransactionalStatus.COMMIT.getCode());
             mitGlobalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
             log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(),
                     childTransaction.getChildTransactionalId(), throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
-            childTransaction.setTransactionalStatusCode(TransactionalEnumStatus.RollBACK.getCode());
+            childTransaction.setTransactionalStatusCode(TransactionalStatus.RollBACK.getCode());
             mitGlobalTransactionManager.saveToRedis(childTransaction);
             throw new RuntimeException(throwable.getMessage());
         }
