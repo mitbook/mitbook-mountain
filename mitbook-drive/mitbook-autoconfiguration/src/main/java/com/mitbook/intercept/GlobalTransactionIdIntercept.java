@@ -16,14 +16,19 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class GlobalTransactionIdIntercept implements HandlerInterceptor {
     
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-            throws Exception {
-        String globalTransactionId = request.getHeader("globalTransactionId");
-        if (StringUtils.isEmpty(globalTransactionId)) {
-            log.info("请求头未包含请求参数globalTransactionId:{}", globalTransactionId);
-            return false;
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
+        try {
+            String globalTransactionId = request.getHeader("globalTransactionId");
+            if (StringUtils.isEmpty(globalTransactionId)) {
+                log.info("请求头未包含请求参数globalTransactionId:{}", globalTransactionId);
+                return false;
+            }
+            MitTransactionalHolder.set(globalTransactionId);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        MitTransactionalHolder.set(globalTransactionId);
-        return true;
+        return false;
+       
     }
 }

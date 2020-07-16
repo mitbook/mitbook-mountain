@@ -93,15 +93,18 @@ public class MitGlobalTransactionManager {
      * @param childTransaction 子事务对象
      * @exception: 可能抛出redis操作存储异常
      */
-    public void saveToRedis(ChildTransaction childTransaction) throws Exception {
-        
-        //从子事务中获取全局事务id
-        String globalTranslationalId = childTransaction.getGlobalTransactionalId();
-        
-        //把事务对象保存到redis中
-        redisTemplate.opsForHash()
-                .put(generatorHashKey(globalTranslationalId), childTransaction.getChildTransactionalId(),
-                        JSONObject.toJSON(childTransaction).toString());
+    public void saveToRedis(ChildTransaction childTransaction){
+        try {
+            //从子事务中获取全局事务id
+            String globalTranslationalId = childTransaction.getGlobalTransactionalId();
+    
+            //把事务对象保存到redis中
+            redisTemplate.opsForHash()
+                    .put(generatorHashKey(globalTranslationalId), childTransaction.getChildTransactionalId(),
+                            JSONObject.toJSON(childTransaction).toString());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
     
     /**
