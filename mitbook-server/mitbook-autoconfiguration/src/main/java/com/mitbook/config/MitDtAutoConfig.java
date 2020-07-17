@@ -4,7 +4,7 @@ import com.mitbook.core.MitGlobalTransactionManager;
 import com.mitbook.support.aspect.MitConnectionAspect;
 import com.mitbook.support.aspect.MitTransactionalAspect;
 import com.mitbook.support.holder.MitDtProperties;
-import com.mitbook.support.marker.MitConfigMarker;
+import com.mitbook.support.marker.MitServerMarkerConfiguration;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @Slf4j
 @EnableConfigurationProperties(MitDtProperties.class)
-@ConditionalOnBean(MitConfigMarker.class)
+@ConditionalOnBean(MitServerMarkerConfiguration.class)
 public class MitDtAutoConfig {
     
     @Bean
