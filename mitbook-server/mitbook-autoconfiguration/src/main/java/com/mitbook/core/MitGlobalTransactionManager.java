@@ -6,7 +6,6 @@ import com.mitbook.support.enumeration.TransactionalStatus;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
@@ -103,7 +102,7 @@ public class MitGlobalTransactionManager {
             String generatorHashKey = generatorHashKey(globalTranslationalId);
             
             //设置key的过期时间
-            redisTemplate.expire(generatorHashKey, 10, TimeUnit.SECONDS);
+            redisTemplate.expire(generatorHashKey,10, TimeUnit.SECONDS);
             
             //把事务对象保存到redis中
             redisTemplate.opsForHash().put(generatorHashKey, childTransaction.getChildTransactionalId(),
