@@ -16,7 +16,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>mitbook-example</module>
-        <module>mitbook-drive</module>
+        <module>mitbook-server</module>
     </modules>
     <properties>
         <java.version>1.8</java.version>
