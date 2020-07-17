@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @Slf4j
 public class GlobalTransactionIdIntercept implements HandlerInterceptor {
     
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler){
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         try {
             String globalTransactionId = request.getHeader("globalTransactionId");
             if (StringUtils.isEmpty(globalTransactionId)) {
@@ -25,10 +25,10 @@ public class GlobalTransactionIdIntercept implements HandlerInterceptor {
             }
             MitTransactionalHolder.set(globalTransactionId);
             return true;
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
-       
+        
     }
 }
