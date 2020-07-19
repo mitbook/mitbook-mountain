@@ -19,16 +19,16 @@ import java.util.concurrent.atomic.AtomicLong;
  * @author pengzhengfa
  */
 @Slf4j
-public class MitConnection extends MitAbstractConnection {
+public class GlobalConnection extends GlobalAbstractConnection {
     
     /**
      * 自己默认的构造器
      *
      * @param connection 数据库连接
      */
-    public MitConnection(Connection connection, MitGlobalTransactionManager mitGlobalTransactionManager,
+    public GlobalConnection(Connection connection, GlobalTransactionManager globalTransactionManager,
             TransactionalProperties transactionalProperties) {
-        super(connection, mitGlobalTransactionManager, transactionalProperties);
+        super(connection, globalTransactionManager, transactionalProperties);
     }
     
     /**
@@ -57,7 +57,7 @@ public class MitConnection extends MitAbstractConnection {
         pool.scheduleWithFixedDelay(new Runnable() {
             public void run() {
                 //轮询的去监控redis的值的变化
-                Integer globalTransStatus = getMitGlobalTransactionManager()
+                Integer globalTransStatus = getGlobalTransactionManager()
                         .calChildTransactionStatus(globalTransactionId);
                 TransactionalStatus transactionalStatus = TransactionalStatus.getByCode(globalTransStatus);
                 log.info("分布式事务:{}的监控值:{}", globalTransactionId, globalTransStatus);

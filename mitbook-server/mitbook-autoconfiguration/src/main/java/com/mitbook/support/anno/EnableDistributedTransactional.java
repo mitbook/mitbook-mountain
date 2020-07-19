@@ -14,6 +14,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(MitServerMarkerConfiguration.class)
-public @interface EnableMitDistributedTransactional {
+public @interface EnableDistributedTransactional {
 
 }

@@ -2,7 +2,7 @@ package com.mitbook.service;
 
 import com.mitbook.entity.OrderInfo;
 import com.mitbook.mapper.OrderInfoMapper;
-import com.mitbook.support.anno.MitTransactional;
+import com.mitbook.support.anno.GlobalTransactional;
 import com.mitbook.support.enumeration.TransactionalType;
 import com.mitbook.support.holder.TransactionalHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -32,7 +32,7 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
     
     @Override
     @Transactional
-    @MitTransactional(transType = TransactionalType.BEGIN)
+    @GlobalTransactional(transType = TransactionalType.BEGIN)
     public void saveOrder(OrderInfo order) {
         log.info("执行目标方法");
         orderInfoMapper.saveOrder(order);

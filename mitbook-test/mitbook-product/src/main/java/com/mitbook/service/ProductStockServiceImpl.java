@@ -1,7 +1,7 @@
 package com.mitbook.service;
 
 import com.mitbook.mapper.ProductInfoMapper;
-import com.mitbook.support.anno.MitTransactional;
+import com.mitbook.support.anno.GlobalTransactional;
 import com.mitbook.support.enumeration.TransactionalType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class ProductStockServiceImpl implements IProductStockInfoService {
     
     @Override
     @Transactional
-    @MitTransactional(transType = TransactionalType.END)
+    @GlobalTransactional(transType = TransactionalType.END)
     public void updateProductStock(String productId) {
         productInfoMapper.updateProductInfo(productId);
     }

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
  * @author pengzhengfa
  */
 @Slf4j
-public class MitGlobalTransactionManager {
+public class GlobalTransactionManager {
     
     @Autowired
     private RedisTemplate redisTemplate;

@@ -1,6 +1,6 @@
 package com.mitbook;
 
-import com.mitbook.support.anno.EnableMitDistributedTransactional;
+import com.mitbook.support.anno.EnableDistributedTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,7 +13,7 @@ import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
  * @author pengzhengfa
  */
 @Slf4j
-@EnableMitDistributedTransactional
+@EnableDistributedTransactional
 @SpringBootApplication
 public class MitbookProductApplication {
     

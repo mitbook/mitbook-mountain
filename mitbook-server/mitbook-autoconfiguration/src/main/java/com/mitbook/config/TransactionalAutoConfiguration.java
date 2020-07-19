@@ -1,8 +1,8 @@
 package com.mitbook.config;
 
-import com.mitbook.core.MitGlobalTransactionManager;
-import com.mitbook.support.aspect.MitConnectionAspect;
-import com.mitbook.support.aspect.MitTransactionalAspect;
+import com.mitbook.core.GlobalTransactionManager;
+import com.mitbook.support.aspect.GlobalConnectionAspect;
+import com.mitbook.support.aspect.GlobalTransactionalAspect;
 import com.mitbook.support.holder.TransactionalProperties;
 import com.mitbook.support.marker.MitServerMarkerConfiguration;
 import lombok.extern.slf4j.Slf4j;
@@ -20,23 +20,23 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 @EnableConfigurationProperties(TransactionalProperties.class)
 @ConditionalOnBean(MitServerMarkerConfiguration.class)
-public class MitDtAutoConfig {
+public class TransactionalAutoConfiguration {
     
     @Bean
-    public MitConnectionAspect mitConnectionAspect() {
+    public GlobalConnectionAspect globalConnectionAspect() {
         log.info("加载MitConnectionAspect切面到容器中");
-        return new MitConnectionAspect();
+        return new GlobalConnectionAspect();
     }
     
     @Bean
-    public MitTransactionalAspect mitTransactionalAspect() {
+    public GlobalTransactionalAspect globalTransactionalAspect() {
         log.info("加载MitTransactionalAspect切面到容器中");
-        return new MitTransactionalAspect();
+        return new GlobalTransactionalAspect();
     }
     
     @Bean
-    public MitGlobalTransactionManager mitGlobalTransactionManager() {
+    public GlobalTransactionManager globalTransactionManager() {
         log.info("加载MitGlobalTransactionManager到容器中");
-        return new MitGlobalTransactionManager();
+        return new GlobalTransactionManager();
     }
 }

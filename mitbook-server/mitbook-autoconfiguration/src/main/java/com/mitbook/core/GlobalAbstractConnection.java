@@ -16,11 +16,11 @@ import java.util.concurrent.Executor;
  */
 @Data
 @AllArgsConstructor
-public abstract class MitAbstractConnection implements Connection {
+public abstract class GlobalAbstractConnection implements Connection {
     
     private Connection connection;
     
-    private MitGlobalTransactionManager mitGlobalTransactionManager;
+    private GlobalTransactionManager globalTransactionManager;
     
     private TransactionalProperties transactionalProperties;
     
