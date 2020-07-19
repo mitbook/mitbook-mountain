@@ -15,7 +15,7 @@
     <description>mitbook-mountain</description>
     <packaging>pom</packaging>
     <modules>
-        <module>mitbook-example</module>
+        <module>mitbook-test</module>
         <module>mitbook-server</module>
     </modules>
     <properties>

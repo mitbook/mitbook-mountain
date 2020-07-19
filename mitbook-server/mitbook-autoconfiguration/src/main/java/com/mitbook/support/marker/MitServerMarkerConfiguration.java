@@ -13,8 +13,4 @@ public class MitServerMarkerConfiguration {
     public Marker mitServerMarkerBean() {
         return new Marker();
     }
-    
-    class Marker {
-    
-    }
 }

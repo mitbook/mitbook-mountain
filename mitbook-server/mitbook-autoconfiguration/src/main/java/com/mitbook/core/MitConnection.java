@@ -101,7 +101,7 @@ public class MitConnection extends MitAbstractConnection {
      */
     @Override
     public void close() throws SQLException {
-    
+
     }
     
     /**
