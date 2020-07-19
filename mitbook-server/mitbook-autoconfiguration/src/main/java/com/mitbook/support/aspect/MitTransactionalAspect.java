@@ -6,8 +6,8 @@ import com.mitbook.core.ChildTransaction;
 import com.mitbook.support.anno.MitTransactional;
 import com.mitbook.support.enumeration.TransactionalType;
 import com.mitbook.support.enumeration.TransactionalStatus;
-import com.mitbook.support.holder.MitTransactionalHolder;
-import com.mitbook.support.utils.MitDtUtil;
+import com.mitbook.support.holder.TransactionalHolder;
+import com.mitbook.support.holder.GlobalAndChildTransactionId;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -56,10 +56,10 @@ public class MitTransactionalAspect {
         if (transactionalType.getCode() == TransactionalType.BEGIN.getCode()) {
             
             //生成全局唯一id
-            String gableTransactionId = MitDtUtil.generatorGlobalTransactionalId();
+            String gableTransactionId = GlobalAndChildTransactionId.generatorGlobalTransactionalId();
             
             //放入线程变量中
-            MitTransactionalHolder.set(gableTransactionId);
+            TransactionalHolder.set(gableTransactionId);
         }
         
         //使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WAFTING状态)
@@ -105,10 +105,10 @@ public class MitTransactionalAspect {
     private ChildTransaction builderChildTransaction(Integer transactionalTypeEnumCode,
             Integer transactionalEnumStatusCode) {
         MitTruncationBuilder mitTruncationBuilder = new MitTruncationBuilder();
-        String childTransId = MitDtUtil.generatorChildTransactionalId();
-        MitTransactionalHolder.setChild(childTransId);
+        String childTransId = GlobalAndChildTransactionId.generatorChildTransactionalId();
+        TransactionalHolder.setChild(childTransId);
         return mitTruncationBuilder.builderTransactionalTypeEnumCode(transactionalTypeEnumCode)
                 .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(transactionalEnumStatusCode)
-                .builderGlobalTransactionId(MitTransactionalHolder.get()).builder();
+                .builderGlobalTransactionId(TransactionalHolder.get()).builder();
     }
 }

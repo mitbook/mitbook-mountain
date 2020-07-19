@@ -1,11 +1,11 @@
-package com.mitbook.support.utils;
+package com.mitbook.support.holder;
 
 import java.util.UUID;
 
 /**
  * @author pengzhengfa
  */
-public class MitDtUtil {
+public class GlobalAndChildTransactionId {
     
     /**
      * 生成事务全局id

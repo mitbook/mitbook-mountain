@@ -1,6 +1,6 @@
 package com.mitbook.intercept;
 
-import com.mitbook.support.holder.MitTransactionalHolder;
+import com.mitbook.support.holder.TransactionalHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -23,7 +23,7 @@ public class GlobalTransactionIdIntercept implements HandlerInterceptor {
                 log.info("请求头未包含请求参数globalTransactionId:{}", globalTransactionId);
                 return false;
             }
-            MitTransactionalHolder.set(globalTransactionId);
+            TransactionalHolder.set(globalTransactionId);
             return true;
         } catch (Exception e) {
             e.printStackTrace();

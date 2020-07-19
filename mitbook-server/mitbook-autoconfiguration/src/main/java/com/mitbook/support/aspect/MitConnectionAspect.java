@@ -2,7 +2,7 @@ package com.mitbook.support.aspect;
 
 import com.mitbook.core.MitConnection;
 import com.mitbook.core.MitGlobalTransactionManager;
-import com.mitbook.support.holder.MitDtProperties;
+import com.mitbook.support.holder.TransactionalProperties;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -24,7 +24,7 @@ public class MitConnectionAspect {
     private MitGlobalTransactionManager mitGlobalTransactionManager;
     
     @Autowired
-    private MitDtProperties mitDtProperties;
+    private TransactionalProperties transactionalProperties;
     
     /**
      * 环绕通知
@@ -36,7 +36,8 @@ public class MitConnectionAspect {
         //返回数据库原生的Connection
         Connection connection = (Connection) proceedingJoinPoint.proceed();
         //保证成我们自己的数据库连接,然后获取控制权
-        MitConnection angleConnection = new MitConnection(connection, mitGlobalTransactionManager, mitDtProperties);
+        MitConnection angleConnection = new MitConnection(connection, mitGlobalTransactionManager,
+                transactionalProperties);
         return angleConnection;
     }
 }

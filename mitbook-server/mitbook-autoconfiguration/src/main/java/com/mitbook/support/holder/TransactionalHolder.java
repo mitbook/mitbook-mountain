@@ -5,7 +5,7 @@ package com.mitbook.support.holder;
  *
  * @author pengzhengfa
  */
-public class MitTransactionalHolder {
+public class TransactionalHolder {
     
     public static final ThreadLocal<String> GLOBALTRANSACTIONID = new ThreadLocal<>();
     
