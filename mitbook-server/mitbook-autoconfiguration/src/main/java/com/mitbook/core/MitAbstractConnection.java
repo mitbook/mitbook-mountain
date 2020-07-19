@@ -1,6 +1,6 @@
 package com.mitbook.core;
 
-import com.mitbook.support.holder.MitDtProperties;
+import com.mitbook.support.holder.TransactionalProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -22,7 +22,7 @@ public abstract class MitAbstractConnection implements Connection {
     
     private MitGlobalTransactionManager mitGlobalTransactionManager;
     
-    private MitDtProperties mitDtProperties;
+    private TransactionalProperties transactionalProperties;
     
     @Override
     public Statement createStatement() throws SQLException {

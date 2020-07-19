@@ -1,8 +1,8 @@
 package com.mitbook.core;
 
 import com.mitbook.support.enumeration.TransactionalStatus;
-import com.mitbook.support.holder.MitDtProperties;
-import com.mitbook.support.holder.MitTransactionalHolder;
+import com.mitbook.support.holder.TransactionalProperties;
+import com.mitbook.support.holder.TransactionalHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
@@ -27,8 +27,8 @@ public class MitConnection extends MitAbstractConnection {
      * @param connection 数据库连接
      */
     public MitConnection(Connection connection, MitGlobalTransactionManager mitGlobalTransactionManager,
-            MitDtProperties mitDtProperties) {
-        super(connection, mitGlobalTransactionManager, mitDtProperties);
+            TransactionalProperties transactionalProperties) {
+        super(connection, mitGlobalTransactionManager, transactionalProperties);
     }
     
     /**
@@ -40,10 +40,10 @@ public class MitConnection extends MitAbstractConnection {
     public void commit() throws SQLException {
         
         //从线程变量中获取全局事务id
-        String globalTransactionId = MitTransactionalHolder.get();
+        String globalTransactionId = TransactionalHolder.get();
         
         //没有加入到分布式事务中,使用本地的事务
-        if (StringUtils.isEmpty(MitTransactionalHolder.getChild())) {
+        if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
             log.info("没有加入到分布式事务中,使用本地事务");
             getConnection().commit();
             return;
@@ -70,12 +70,12 @@ public class MitConnection extends MitAbstractConnection {
                         log.info("回滚分布式事务:{}", globalTransactionId);
                         globalRollBack(getConnection(), pool);
                     case WAITING:
-                        if (count.addAndGet(getMitDtProperties().getDelay()) > getMitDtProperties().getWaitingTime()) {
+                        if (count.addAndGet(getTransactionalProperties().getDelay()) > getTransactionalProperties().getWaitingTime()) {
                             globalRollBack(getConnection(), pool);
                         }
                 }
             }
-        }, getMitDtProperties().getInitialDelay(), getMitDtProperties().getDelay(), TimeUnit.SECONDS);
+        }, getTransactionalProperties().getInitialDelay(), getTransactionalProperties().getDelay(), TimeUnit.SECONDS);
     }
     
     /**
@@ -86,7 +86,7 @@ public class MitConnection extends MitAbstractConnection {
     @Override
     public void rollback() throws SQLException {
         //没有加入到分布式事务中,使用的是本地事务
-        if (StringUtils.isEmpty(MitTransactionalHolder.getChild())) {
+        if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
             log.info("没有加入到分布式事务中,使用本地事务");
             getConnection().rollback();
         } else {

@@ -6,9 +6,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 /**
  * @author pengzhengfa
  */
-@ConfigurationProperties(prefix = "mit.dt")
+@ConfigurationProperties(prefix = "transactional.dt")
 @Data
-public class MitDtProperties {
+public class TransactionalProperties {
     
     private long initialDelay = 1;
     

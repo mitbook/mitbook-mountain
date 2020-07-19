@@ -4,7 +4,7 @@ import com.mitbook.entity.OrderInfo;
 import com.mitbook.mapper.OrderInfoMapper;
 import com.mitbook.support.anno.MitTransactional;
 import com.mitbook.support.enumeration.TransactionalType;
-import com.mitbook.support.holder.MitTransactionalHolder;
+import com.mitbook.support.holder.TransactionalHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -39,7 +39,7 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
         
         //构建请求头
         HttpHeaders requestHeaders = new HttpHeaders();
-        requestHeaders.add("globalTransactionId", MitTransactionalHolder.get());
+        requestHeaders.add("globalTransactionId", TransactionalHolder.get());
         HttpEntity<String> requestEntity = new HttpEntity<String>(null, requestHeaders);
         //发送请求
         ResponseEntity<String> response = restTemplate
