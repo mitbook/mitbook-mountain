@@ -29,3 +29,6 @@ script:
   - mvn clean install -DskipITs -Dmaven.test.skip=true
   - mvn -Dmaven.test.skip=true clean install -U
   - mvn -Dmaven.test.skip=true clean
+
+after_success:
+  - mvn clean package -Pit-test
