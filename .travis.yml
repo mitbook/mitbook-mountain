@@ -27,7 +27,7 @@ before_install:
 
 script:
   - mvn -B clean package apache-rat:check findbugs:findbugs -Dmaven.test.skip=true
-  - mvn -Prelease-nacos -Dmaven.test.skip=true clean install -U
+  - mvn -Prelease-mitbook-mountain -Dmaven.test.skip=true clean install -U
   - mvn clean install -Pcit-test
   - mvn clean package -Pit-test
 after_success:
