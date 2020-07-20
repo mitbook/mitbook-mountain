@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
  *
  * @author pengzhengfa
  */
-public class MitServerMarkerConfiguration {
+public class GlobalServerMarkerConfiguration {
     
     @Bean
-    public Marker mitServerMarkerBean() {
+    public Marker globalServerMarkerBean() {
         return new Marker();
     }
 }

@@ -1,9 +1,9 @@
 package com.mitbook.support.aspect;
 
-import com.mitbook.core.MitGlobalTransactionManager;
-import com.mitbook.core.MitTruncationBuilder;
+import com.mitbook.core.GlobalTransactionManager;
+import com.mitbook.core.GlobalTruncationBuilder;
 import com.mitbook.core.ChildTransaction;
-import com.mitbook.support.anno.MitTransactional;
+import com.mitbook.support.anno.GlobalTransactional;
 import com.mitbook.support.enumeration.TransactionalType;
 import com.mitbook.support.enumeration.TransactionalStatus;
 import com.mitbook.support.holder.TransactionalHolder;
@@ -28,15 +28,15 @@ import java.lang.reflect.Method;
 @Aspect
 @Order(0)
 @Slf4j
-public class MitTransactionalAspect {
+public class GlobalTransactionalAspect {
     
     @Autowired
-    private MitGlobalTransactionManager mitGlobalTransactionManager;
+    private GlobalTransactionManager globalTransactionManager;
     
     @Autowired
     private RedisTemplate redisTemplate;
     
-    @Pointcut("@annotation(com.mitbook.support.anno.MitTransactional)")
+    @Pointcut("@annotation(com.mitbook.support.anno.GlobalTransactional)")
     public void pointCut() {
     
     }
@@ -47,10 +47,10 @@ public class MitTransactionalAspect {
         Method targetMethod = getTargetMethod(joinPoint);
         
         //获取目标方法的注解
-        MitTransactional mitTransactional = targetMethod.getAnnotation(MitTransactional.class);
+        GlobalTransactional globalTransactional = targetMethod.getAnnotation(GlobalTransactional.class);
         
         //获取注解属性对象
-        TransactionalType transactionalType = mitTransactional.transType();
+        TransactionalType transactionalType = globalTransactional.transType();
         
         //判断是不是分布式事务开始节点
         if (transactionalType.getCode() == TransactionalType.BEGIN.getCode()) {
@@ -69,21 +69,21 @@ public class MitTransactionalAspect {
         try {
             
             //把子事务对象上报到分布式事务管理中心
-            mitGlobalTransactionManager.saveToRedis(childTransaction);
+            globalTransactionManager.saveToRedis(childTransaction);
             
             //调用目标方法,我们需要在目标新开一个线程去监控redis的值是否变化来决定,本地事务是提交还是回滚
             joinPoint.proceed();
             
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
             childTransaction.setTransactionalStatusCode(TransactionalStatus.COMMIT.getCode());
-            mitGlobalTransactionManager.saveToRedis(childTransaction);
+            globalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
             log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(),
                     childTransaction.getChildTransactionalId(), throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
             childTransaction.setTransactionalStatusCode(TransactionalStatus.RollBACK.getCode());
-            mitGlobalTransactionManager.saveToRedis(childTransaction);
+            globalTransactionManager.saveToRedis(childTransaction);
             throw new RuntimeException(throwable.getMessage());
         }
         
@@ -104,10 +104,10 @@ public class MitTransactionalAspect {
      */
     private ChildTransaction builderChildTransaction(Integer transactionalTypeEnumCode,
             Integer transactionalEnumStatusCode) {
-        MitTruncationBuilder mitTruncationBuilder = new MitTruncationBuilder();
+        GlobalTruncationBuilder globalTruncationBuilder = new GlobalTruncationBuilder();
         String childTransId = GlobalAndChildTransactionId.generatorChildTransactionalId();
         TransactionalHolder.setChild(childTransId);
-        return mitTruncationBuilder.builderTransactionalTypeEnumCode(transactionalTypeEnumCode)
+        return globalTruncationBuilder.builderTransactionalTypeEnumCode(transactionalTypeEnumCode)
                 .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(transactionalEnumStatusCode)
                 .builderGlobalTransactionId(TransactionalHolder.get()).builder();
     }

@@ -1,6 +1,6 @@
 package com.mitbook.support.anno;
 
-import com.mitbook.support.marker.MitServerMarkerConfiguration;
+import com.mitbook.support.marker.GlobalServerMarkerConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Import(MitServerMarkerConfiguration.class)
+@Import(GlobalServerMarkerConfiguration.class)
 public @interface EnableMitDistributedTransactional {
 
 }

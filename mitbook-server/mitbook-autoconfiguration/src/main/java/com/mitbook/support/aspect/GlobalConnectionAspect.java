@@ -1,7 +1,7 @@
 package com.mitbook.support.aspect;
 
-import com.mitbook.core.MitConnection;
-import com.mitbook.core.MitGlobalTransactionManager;
+import com.mitbook.core.GlobalConnection;
+import com.mitbook.core.GlobalTransactionManager;
 import com.mitbook.support.holder.TransactionalProperties;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -18,10 +18,10 @@ import java.sql.Connection;
  */
 @Aspect
 @Order(1)
-public class MitConnectionAspect {
+public class GlobalConnectionAspect {
     
     @Autowired
-    private MitGlobalTransactionManager mitGlobalTransactionManager;
+    private GlobalTransactionManager globalTransactionManager;
     
     @Autowired
     private TransactionalProperties transactionalProperties;
@@ -36,7 +36,7 @@ public class MitConnectionAspect {
         //返回数据库原生的Connection
         Connection connection = (Connection) proceedingJoinPoint.proceed();
         //保证成我们自己的数据库连接,然后获取控制权
-        MitConnection angleConnection = new MitConnection(connection, mitGlobalTransactionManager,
+        GlobalConnection angleConnection = new GlobalConnection(connection, globalTransactionManager,
                 transactionalProperties);
         return angleConnection;
     }

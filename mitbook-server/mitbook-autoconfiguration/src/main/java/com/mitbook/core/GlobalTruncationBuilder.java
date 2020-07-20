@@ -1,34 +1,34 @@
 package com.mitbook.core;
 
 /**
- * MitTruncationBuilder构建子事务对象
+ * GlobalTruncationBuilder构建子事务对象
  *
  * @author pengzhengfa
  */
-public class MitTruncationBuilder {
+public class GlobalTruncationBuilder {
     
     private ChildTransaction childTransaction;
     
-    public MitTruncationBuilder() {
+    public GlobalTruncationBuilder() {
         childTransaction = new ChildTransaction();
     }
     
-    public MitTruncationBuilder builderChildTransactionalId(String childTransactionalId) {
+    public GlobalTruncationBuilder builderChildTransactionalId(String childTransactionalId) {
         childTransaction.setChildTransactionalId(childTransactionalId);
         return this;
     }
     
-    public MitTruncationBuilder builderTransactionalEnumStatus(Integer transactionalEnumStatusCode) {
+    public GlobalTruncationBuilder builderTransactionalEnumStatus(Integer transactionalEnumStatusCode) {
         childTransaction.setTransactionalStatusCode(transactionalEnumStatusCode);
         return this;
     }
     
-    public MitTruncationBuilder builderTransactionalTypeEnumCode(Integer transactionalTypeEnumCode) {
+    public GlobalTruncationBuilder builderTransactionalTypeEnumCode(Integer transactionalTypeEnumCode) {
         childTransaction.setTransactionalTypeCode(transactionalTypeEnumCode);
         return this;
     }
     
-    public MitTruncationBuilder builderGlobalTransactionId(String globalTransactionId) {
+    public GlobalTruncationBuilder builderGlobalTransactionId(String globalTransactionId) {
         childTransaction.setGlobalTransactionalId(globalTransactionId);
         return this;
     }
