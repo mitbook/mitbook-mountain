@@ -28,3 +28,4 @@ before_install:
 script:
   - mvn -Dmaven.test.skip=true clean install -U
   - mvn -Dmaven.test.skip=true clean
+  - mvn clean install -DskipITs -Dmaven.test.skip=true
