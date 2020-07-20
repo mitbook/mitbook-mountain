@@ -27,4 +27,4 @@ before_install:
 
 script:
   - mvn -Dmaven.test.skip=true clean install -U
-  - - mvn -Dmaven.test.skip=true clean
+  - mvn -Dmaven.test.skip=true clean
