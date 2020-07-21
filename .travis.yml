@@ -2,6 +2,7 @@ notifications:
   email:
     recipients:
       - 13656694002@163.com
+      - pengzhengfa@aliyun.com
   on_success: change
   on_failure: always
 
