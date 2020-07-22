@@ -1,15 +1,15 @@
 ```shell script
-#Framework description
-1. The framework is to solve the problem of distributed transaction in distributed system. Its principle is to improve a set of distributed transaction framework based on Alibaba's Seata idea and spring transaction idea
-   When the amount of log data is large, the data is based on pure memory operation, which helps to improve the performance of the framework
-# Instructions for use
-1.Please refer to the mitbook test project (based on order business) for details
-#Design principle
-1.At present, no schematic diagram is provided. If you understand the Seata framework, the idea of this framework is relatively simple, because the framework is based on the Seata framework
-#Support database
-1.All databases on the market are supported, as long as they are compliant with JDBC specification
-#Technology selection
-1.springboot,aop,redis,and so on
-#Test address
-One http://localhost :8066/order/saveOrder?orderNo=12222&amp;userId=1000&amp;productId=1&amp;productNum=1
+#框架描述
+ 1.该框架是解决分布式系统中的分布式事务问题,其原理是借鉴与阿里巴巴的seata思想以及spring事务的思想而改进的一套分布式事务框架,seata是日志存储于mysql中,而该框架
+   是把日志数据存放在redis中,当日志数据量比较大的时候数据基于纯内存操作,有助于提升框架的性能
+#使用说明
+ 1.详细请看mitbook-test工程(基于订单业务)
+#设计原理
+ 1.目前不提供原理图,如果了解seata框架的话,本框架思想也是比较简单的,因为该框架是基于seata框架的
+#支持数据库
+ 1.市面上的数据库都支持,只要是符合jdbc规范的数据库都支持
+#技术选型
+ 1.springboot,aop,redis等
+#测试地址
+ 1.http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1
 ```
