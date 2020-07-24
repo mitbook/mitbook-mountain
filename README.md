@@ -13,4 +13,6 @@
  1.springboot,aop,redis等
 #测试地址
  1.http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1
+#知识产权说明
+ 1.未经本人允许请勿用于商业,以免法院请您过去喝小茶,得不偿失
 ```
