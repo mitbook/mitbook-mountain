@@ -24,6 +24,7 @@ import java.util.Date;
  */
 @Data
 public class OrderInfo {
+
     /**
      * 订单号
      */
