@@ -24,7 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 全局事务ID拦截器,从header中获取分布式全局id
+ * 全局事务id拦截器,从header中获取分布式全局id
  *
  * @author pengzhengfa
  */
