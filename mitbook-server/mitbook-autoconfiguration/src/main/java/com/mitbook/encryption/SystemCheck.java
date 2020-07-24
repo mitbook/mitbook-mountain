@@ -6,6 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.Properties;
 
+/**
+ * @author BobSimon
+ */
 @Component
 public class SystemCheck implements ApplicationListener {
 
