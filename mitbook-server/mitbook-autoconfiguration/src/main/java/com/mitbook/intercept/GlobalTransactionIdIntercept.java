@@ -22,6 +22,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 全局事务id拦截器,从header中获取分布式全局id
@@ -30,7 +31,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Slf4j
 public class GlobalTransactionIdIntercept implements HandlerInterceptor {
-    
+
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         try {
             String globalTransactionId = request.getHeader("globalTransactionId");

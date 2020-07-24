@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 package com.mitbook.support.marker;
-
-import com.mitbook.encryption.SystemCheck;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-
 /**
  * Marker标记类
  *
  * @author pengzhengfa
  */
-@ConditionalOnClass(SystemCheck.class)
 public class Marker {
     
 }
