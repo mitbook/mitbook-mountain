@@ -24,11 +24,11 @@ public class SystemCheck implements ApplicationListener {
 
     @Override
     public void onApplicationEvent(ApplicationEvent applicationEvent) {
-        if (!authCheck()){
+        if (!SystemAuthCheck()){
             throw new RuntimeException("Sorry, the system has no permission to use, please contact the administrator!");
         }
     }
-    public boolean authCheck() {
+    public boolean SystemAuthCheck() {
         if (cpuCount != checkCpu && !props.getProperty("java.version").equals(jdkVersion) && !props.getProperty("user.dir").equals(runDir)) {
             throw new RuntimeException("Sorry, the system has no permission to use, please contact the administrator!");
         }
