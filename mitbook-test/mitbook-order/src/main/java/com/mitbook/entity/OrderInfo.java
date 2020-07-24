@@ -24,14 +24,29 @@ import java.util.Date;
  */
 @Data
 public class OrderInfo {
-    
+
+    /**
+     * 订单号
+     */
     private String orderNo;
-    
+
+    /**
+     * 用户id
+     */
     private Integer userId;
-    
+
+    /**
+     * 创建时间
+     */
     private Date createDate = new Date();
-    
+
+    /**
+     * 商品id
+     */
     private String productId;
-    
+
+    /**
+     * 商品数量
+     */
     private String productNum;
 }

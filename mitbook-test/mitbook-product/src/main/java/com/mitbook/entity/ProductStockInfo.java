@@ -24,10 +24,20 @@ import lombok.Data;
  */
 @Data
 public class ProductStockInfo {
-    
+
+    /**
+     * 商品id
+     */
     private String productId;
-    
+
+
+    /**
+     * 商品名称
+     */
     private String productName;
-    
+
+    /**
+     * 库存数量
+     */
     private Integer stockNum;
 }
