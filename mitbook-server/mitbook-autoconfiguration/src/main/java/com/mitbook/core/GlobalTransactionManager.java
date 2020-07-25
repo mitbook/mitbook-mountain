@@ -107,7 +107,7 @@ public class GlobalTransactionManager {
      * 把子事务对象保存到redis
      *
      * @param childTransaction 子事务对象
-     * @exception: 可能抛出redis操作存储异常
+     * @exception: 可能抛出redis操作存储异常(在生产环境上可讲redis部署为集群模式)
      */
     public void saveToRedis(ChildTransaction childTransaction) {
         try {
