@@ -122,8 +122,8 @@ public class GlobalTransactionalAspect {
         GlobalTruncationBuilder globalTruncationBuilder = new GlobalTruncationBuilder();
         String childTransId = GlobalAndChildTransactionId.generatorChildTransactionalId();
         TransactionalHolder.setChild(childTransId);
-        return globalTruncationBuilder.builderTransactionalTypeEnumCode(transactionalTypeCode)
-                .builderChildTransactionalId(childTransId).builderTransactionalEnumStatus(transactionalStatusCode)
+        return globalTruncationBuilder.builderTransactionalTypeCode(transactionalTypeCode)
+                .builderChildTransactionalId(childTransId).builderTransactionalStatus(transactionalStatusCode)
                 .builderGlobalTransactionId(TransactionalHolder.get()).builder();
     }
 }

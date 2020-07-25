@@ -33,13 +33,13 @@ public class GlobalTruncationBuilder {
         return this;
     }
     
-    public GlobalTruncationBuilder builderTransactionalEnumStatus(Integer transactionalEnumStatusCode) {
-        childTransaction.setTransactionalStatusCode(transactionalEnumStatusCode);
+    public GlobalTruncationBuilder builderTransactionalStatus(Integer transactionalStatusCode) {
+        childTransaction.setTransactionalStatusCode(transactionalStatusCode);
         return this;
     }
     
-    public GlobalTruncationBuilder builderTransactionalTypeEnumCode(Integer transactionalTypeEnumCode) {
-        childTransaction.setTransactionalTypeCode(transactionalTypeEnumCode);
+    public GlobalTruncationBuilder builderTransactionalTypeCode(Integer transactionalTypeCode) {
+        childTransaction.setTransactionalTypeCode(transactionalTypeCode);
         return this;
     }
     
