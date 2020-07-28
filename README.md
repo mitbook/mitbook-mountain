@@ -12,7 +12,7 @@
 #支持数据库
  1.市面上的数据库都支持,只要是符合jdbc规范的数据库都支持
 #技术选型
- 1.springboot,aop,redis等
+ 1.springboot,aop,redis等等
 #测试地址
  1.http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1
 #注意
