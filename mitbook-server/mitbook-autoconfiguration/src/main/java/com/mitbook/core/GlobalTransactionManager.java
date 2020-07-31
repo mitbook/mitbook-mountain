@@ -58,7 +58,7 @@ public class GlobalTransactionManager {
         //用户统计各个子事务commit的提交个数
         Integer commitCount = 0;
         
-        boolean needRoolBack = false;
+        boolean needRollBack = false;
         
         Integer beginAndEnd = 0;
         
@@ -70,7 +70,7 @@ public class GlobalTransactionManager {
             
             //只要子事务其中一个出现rollback,分布式事务回滚
             if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.RollBACK.getCode()) {
-                needRoolBack = true;
+                needRollBack = true;
             }
             //统计commit的个数
             if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.COMMIT.getCode()) {
@@ -90,7 +90,7 @@ public class GlobalTransactionManager {
         }
         
         //收到了begin 和end的子事务对象,但是其中有出现了rollabck,全局回滚
-        if (needRoolBack) {
+        if (needRollBack) {
             return TransactionalStatus.RollBACK.getCode();
         }
         
