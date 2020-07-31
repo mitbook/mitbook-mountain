@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.mitbook</groupId>
-            <artifactId>mitbook-autoconfiguration</artifactId>
+            <artifactId>mitbook-stater</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>

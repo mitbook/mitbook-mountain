@@ -17,4 +17,16 @@
  1.http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1
 #注意
  1.未经本人允许请勿用于商业
+#集成第三方框架使用
+ 1.引入maven依赖
+ <dependency>
+    <groupId>com.mitbook</groupId>
+    <artifactId>mitbook-stater</artifactId>
+    <version>1.0</version>
+  </dependency>
+  2.在启动类上加上@EnableMitDistributedTransactional注解,就能解决分布式事务问题
+#代码共享说明
+ 1.如源码爱好者有更好思想,欢迎来扰,本人以真诚的谢意欢迎您来贡献
+ 2.如发现bug请及时与我联系,本人看到消息会在第一时间联系你,帮您解决问题
+ 3.本框架只应用于学习,不应用与商业,如需应用于商业,请与本人联系,谢谢
 ```
