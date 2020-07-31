@@ -24,9 +24,7 @@ import org.springframework.util.StringUtils;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -64,11 +62,11 @@ public class GlobalConnection extends GlobalAbstractConnection {
             getConnection().commit();
             return;
         }
-        
         //开启一个新的线程去监控redis内存值的变化
-        ScheduledExecutorService pool = Executors.newScheduledThreadPool(10);
+        ScheduledThreadPoolExecutor pool = new ScheduledThreadPoolExecutor(10);
         
         AtomicLong count = new AtomicLong(0);
+        
         //定时线程池
         pool.scheduleWithFixedDelay(new Runnable() {
             public void run() {
