@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.mitbook.entity;
 
 import lombok.Data;
@@ -24,27 +25,27 @@ import java.util.Date;
  */
 @Data
 public class OrderInfo {
-
+    
     /**
      * 订单号
      */
     private String orderNo;
-
+    
     /**
      * 用户id
      */
     private Integer userId;
-
+    
     /**
      * 创建时间
      */
     private Date createDate = new Date();
-
+    
     /**
      * 商品id
      */
     private String productId;
-
+    
     /**
      * 商品数量
      */

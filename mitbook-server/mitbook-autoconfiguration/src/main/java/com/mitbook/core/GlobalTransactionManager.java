@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.mitbook.core;
 
 import com.alibaba.fastjson.JSONObject;
@@ -24,6 +25,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 分布式事务管理器
@@ -56,11 +58,11 @@ public class GlobalTransactionManager {
         Iterator<String> iterator = childTransIdSet.iterator();
         
         //用户统计各个子事务commit的提交个数
-        Integer commitCount = 0;
+        AtomicInteger commitCount = new AtomicInteger(0);
         
         boolean needRollBack = false;
         
-        Integer beginAndEnd = 0;
+        AtomicInteger beginAndEnd = new AtomicInteger(0);
         
         while (iterator.hasNext()) {
             String childTransId = iterator.next();
@@ -74,28 +76,28 @@ public class GlobalTransactionManager {
             }
             //统计commit的个数
             if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.COMMIT.getCode()) {
-                commitCount++;
+                commitCount.incrementAndGet();
             }
             
             if (childTransaction.getTransactionalTypeCode() == TransactionalType.BEGIN.getCode()
                     || childTransaction.getTransactionalTypeCode() == TransactionalType.END.getCode()) {
-                beginAndEnd++;
+                beginAndEnd.incrementAndGet();
             }
             
         }
         
         //没有收到begin 和end 的二个子事务
-        if (beginAndEnd != 2) {
+        if (beginAndEnd.get() != 2) {
             return TransactionalStatus.WAITING.getCode();
         }
         
-        //收到了begin 和end的子事务对象,但是其中有出现了rollabck,全局回滚
+        //收到了begin 和end的子事务对象,但是其中有出现了rollback,全局回滚
         if (needRollBack) {
             return TransactionalStatus.RollBACK.getCode();
         }
         
         //若所有的子事务都是commit的
-        if (childTransMap.size() == commitCount) {
+        if (childTransMap.size() == commitCount.get()) {
             return TransactionalStatus.COMMIT.getCode();
         }
         

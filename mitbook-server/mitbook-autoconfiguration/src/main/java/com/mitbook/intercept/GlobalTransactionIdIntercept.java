@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.mitbook.intercept;
 
 import com.mitbook.support.holder.TransactionalHolder;
@@ -31,7 +32,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 @Slf4j
 public class GlobalTransactionIdIntercept implements HandlerInterceptor {
-
+    
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
         try {
             String globalTransactionId = request.getHeader("globalTransactionId");

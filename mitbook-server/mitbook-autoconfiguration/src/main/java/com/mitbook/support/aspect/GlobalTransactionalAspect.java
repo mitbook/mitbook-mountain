@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.mitbook.support.aspect;
 
 import com.mitbook.core.GlobalTransactionManager;
@@ -57,7 +58,7 @@ public class GlobalTransactionalAspect {
     }
     
     @Around("pointCut()")
-    public void invoke(ProceedingJoinPoint joinPoint){
+    public void invoke(ProceedingJoinPoint joinPoint) {
         
         Method targetMethod = getTargetMethod(joinPoint);
         
@@ -92,7 +93,7 @@ public class GlobalTransactionalAspect {
             //目标方法没有抛出异常  修改中间状态为COMMIT状态
             childTransaction.setTransactionalStatusCode(TransactionalStatus.COMMIT.getCode());
             globalTransactionManager.saveToRedis(childTransaction);
-
+            
         } catch (Throwable throwable) {
             log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(),
                     childTransaction.getChildTransactionalId(), throwable.getStackTrace());
@@ -117,8 +118,7 @@ public class GlobalTransactionalAspect {
     /**
      * 构造子事务对象
      */
-    private ChildTransaction builderChildTransaction(Integer transactionalTypeCode,
-            Integer transactionalStatusCode) {
+    private ChildTransaction builderChildTransaction(Integer transactionalTypeCode, Integer transactionalStatusCode) {
         GlobalTruncationBuilder globalTruncationBuilder = new GlobalTruncationBuilder();
         String childTransId = GlobalAndChildTransactionId.generatorChildTransactionalId();
         TransactionalHolder.setChild(childTransId);
