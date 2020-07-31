@@ -99,16 +99,19 @@ public class GlobalConnection extends GlobalAbstractConnection {
      * @throws SQLException
      */
     @Override
-    public void rollback() throws SQLException {
-        //没有加入到分布式事务中,使用的是本地事务
-        if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
-            log.info("没有加入到分布式事务中,使用本地事务");
-            getConnection().rollback();
-        } else {
-            commit();
+    public void rollback(){
+        try {
+            //没有加入到分布式事务中,使用的是本地事务
+            if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
+                log.info("没有加入到分布式事务中,使用本地事务");
+                getConnection().rollback();
+            } else {
+                commit();
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
         }
     }
-    
     /**
      * 我们需要在这里动手脚
      *
@@ -147,10 +150,9 @@ public class GlobalConnection extends GlobalAbstractConnection {
      * @param pool
      */
     private void globalRollBack(Connection connection, ScheduledExecutorService pool) {
-        //分布式事务不能提交
         try {
+            //分布式事务不能提交
             connection.rollback();
-            
         } catch (SQLException e) {
             log.info("回滚本地事务异常:{}", e.getMessage());
         } finally {
