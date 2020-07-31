@@ -17,6 +17,7 @@
  1.http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1
 #注意
  1.未经本人允许请勿用于商业
+ 2.该框架目前性能不是很好,后期会通过rpc或者netty来解决性能问题
 #集成第三方框架使用
  1.引入maven依赖
  <dependency>
