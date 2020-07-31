@@ -51,8 +51,8 @@ public class GlobalConnectionAspect {
         //返回数据库原生的Connection
         Connection connection = (Connection) proceedingJoinPoint.proceed();
         //保证成我们自己的数据库连接,然后获取控制权
-        GlobalConnection angleConnection = new GlobalConnection(connection, globalTransactionManager,
+        GlobalConnection globalConnection = new GlobalConnection(connection, globalTransactionManager,
                 transactionalProperties);
-        return angleConnection;
+        return globalConnection;
     }
 }
