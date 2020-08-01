@@ -3,6 +3,7 @@ notifications:
     recipients:
       - 13656694002@163.com
       - pengzhengfa@aliyun.com
+      - 843290769@qq.com
   on_success: change
   on_failure: always
 
