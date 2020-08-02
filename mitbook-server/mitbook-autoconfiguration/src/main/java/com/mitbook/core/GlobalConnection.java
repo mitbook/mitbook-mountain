@@ -63,30 +63,30 @@ public class GlobalConnection extends GlobalAbstractConnection {
             return;
         }
         //开启一个新的线程去监控redis内存值的变化
-        ScheduledThreadPoolExecutor pool = new ScheduledThreadPoolExecutor(10);
+        ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(10);
         
         AtomicLong count = new AtomicLong(0);
         
         //定时线程池
-        pool.scheduleWithFixedDelay(new Runnable() {
+        threadPool.scheduleWithFixedDelay(new Runnable() {
             public void run() {
                 //轮询的去监控redis的值的变化
                 Integer globalTransStatus = getGlobalTransactionManager()
-                        .calChildTransactionStatus(globalTransactionId);
+                        .calculationChildTransactionStatus(globalTransactionId);
                 TransactionalStatus transactionalStatus = TransactionalStatus.getByCode(globalTransStatus);
                 log.info("distributed transaction:{}monitor value of:{}", globalTransactionId, globalTransStatus);
                 
                 switch (transactionalStatus) {
                     case COMMIT:
                         log.info("commit distributed transaction:{}", globalTransactionId);
-                        globalCommit(getConnection(), pool);
+                        globalCommit(getConnection(), threadPool);
                     case RollBACK:
                         log.info("rollBack distributed transaction:{}", globalTransactionId);
-                        globalRollBack(getConnection(), pool);
+                        globalRollBack(getConnection(), threadPool);
                     case WAITING:
                         if (count.addAndGet(getTransactionalProperties().getDelay()) > getTransactionalProperties()
                                 .getWaitingTime()) {
-                            globalRollBack(getConnection(), pool);
+                            globalRollBack(getConnection(), threadPool);
                         }
                 }
             }
@@ -126,9 +126,9 @@ public class GlobalConnection extends GlobalAbstractConnection {
      * 全局事务提交
      *
      * @param connection
-     * @param pool
+     * @param threadPool
      */
-    private void globalCommit(Connection connection, ScheduledExecutorService pool) {
+    private void globalCommit(Connection connection, ScheduledExecutorService threadPool) {
         try {
             connection.commit();
         } catch (SQLException e) {
@@ -140,16 +140,16 @@ public class GlobalConnection extends GlobalAbstractConnection {
                 log.error("close database connection exception:{}", e);
             }
         }
-        pool.shutdownNow();
+        threadPool.shutdownNow();
     }
     
     /**
      * 分支事务回滚
      *
      * @param connection
-     * @param pool
+     * @param threadPool
      */
-    private void globalRollBack(Connection connection, ScheduledExecutorService pool) {
+    private void globalRollBack(Connection connection, ScheduledExecutorService threadPool) {
         try {
             //分布式事务不能提交
             connection.rollback();
@@ -162,6 +162,6 @@ public class GlobalConnection extends GlobalAbstractConnection {
                 log.info("close connection exception:{}", e.getMessage());
             }
         }
-        pool.shutdownNow();
+        threadPool.shutdownNow();
     }
 }

@@ -50,7 +50,7 @@ public class GlobalTransactionManager {
      * @param globalTransactionId
      * @exception: 可能抛出redis操作存储异常
      */
-    public Integer calChildTransactionStatus(String globalTransactionId) {
+    public Integer calculationChildTransactionStatus(String globalTransactionId) {
         
         //获取hashKey 下的所有filed value
         Map<String, String> childTransMap = redisTemplate.opsForHash().entries(generatorHashKey(globalTransactionId));
