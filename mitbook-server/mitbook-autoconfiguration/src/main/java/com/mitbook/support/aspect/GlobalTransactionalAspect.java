@@ -95,7 +95,7 @@ public class GlobalTransactionalAspect {
             globalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
-            log.error("保存子事务状态到redis中抛出异常:globalId:{},childId:{},异常:{}", childTransaction.getGlobalTransactionalId(),
+            log.error("save the child transaction state to redis and throw an exception:globalId:{},childId:{},exception:{}", childTransaction.getGlobalTransactionalId(),
                     childTransaction.getChildTransactionalId(), throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
             childTransaction.setTransactionalStatusCode(TransactionalStatus.RollBACK.getCode());

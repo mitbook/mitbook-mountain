@@ -58,7 +58,7 @@ public class GlobalConnection extends GlobalAbstractConnection {
         
         //没有加入到分布式事务中,使用本地的事务
         if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
-            log.info("没有加入到分布式事务中,使用本地事务");
+            log.info("do not join in distributed transaction, use local transaction");
             getConnection().commit();
             return;
         }
@@ -74,14 +74,14 @@ public class GlobalConnection extends GlobalAbstractConnection {
                 Integer globalTransStatus = getGlobalTransactionManager()
                         .calChildTransactionStatus(globalTransactionId);
                 TransactionalStatus transactionalStatus = TransactionalStatus.getByCode(globalTransStatus);
-                log.info("分布式事务:{}的监控值:{}", globalTransactionId, globalTransStatus);
+                log.info("distributed transaction:{}monitor value of:{}", globalTransactionId, globalTransStatus);
                 
                 switch (transactionalStatus) {
                     case COMMIT:
-                        log.info("提交分布式事务:{}", globalTransactionId);
+                        log.info("commit distributed transaction:{}", globalTransactionId);
                         globalCommit(getConnection(), pool);
                     case RollBACK:
-                        log.info("回滚分布式事务:{}", globalTransactionId);
+                        log.info("rollBack distributed transaction:{}", globalTransactionId);
                         globalRollBack(getConnection(), pool);
                     case WAITING:
                         if (count.addAndGet(getTransactionalProperties().getDelay()) > getTransactionalProperties()
@@ -103,7 +103,7 @@ public class GlobalConnection extends GlobalAbstractConnection {
         try {
             //没有加入到分布式事务中,使用的是本地事务
             if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
-                log.info("没有加入到分布式事务中,使用本地事务");
+                log.info("do not join in distributed transaction, use local transaction");
                 getConnection().rollback();
             } else {
                 commit();
@@ -132,12 +132,12 @@ public class GlobalConnection extends GlobalAbstractConnection {
         try {
             connection.commit();
         } catch (SQLException e) {
-            log.error("提交事务异常:{}", e);
+            log.error("commit transaction exception:{}", e);
         } finally {
             try {
                 connection.close();
             } catch (SQLException e) {
-                log.error("关闭数据库连接异常:{}", e);
+                log.error("close database connection exception:{}", e);
             }
         }
         pool.shutdownNow();
@@ -154,12 +154,12 @@ public class GlobalConnection extends GlobalAbstractConnection {
             //分布式事务不能提交
             connection.rollback();
         } catch (SQLException e) {
-            log.info("回滚本地事务异常:{}", e.getMessage());
+            log.info("rollBack local transaction exception:{}", e.getMessage());
         } finally {
             try {
                 getConnection().close();
             } catch (SQLException e) {
-                log.info("关闭连接异常:{}", e.getMessage());
+                log.info("close connection exception:{}", e.getMessage());
             }
         }
         pool.shutdownNow();

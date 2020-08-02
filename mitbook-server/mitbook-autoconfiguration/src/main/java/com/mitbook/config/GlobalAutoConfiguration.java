@@ -40,19 +40,19 @@ public class GlobalAutoConfiguration {
     
     @Bean
     public GlobalConnectionAspect globalConnectionAspect() {
-        log.info("加载GlobalConnectionAspect切面到容器中");
+        log.info("load globalConnectionAspect to container");
         return new GlobalConnectionAspect();
     }
     
     @Bean
     public GlobalTransactionalAspect globalTransactionalAspect() {
-        log.info("加载GlobalTransactionalAspect切面到容器中");
+        log.info("load globalTransactionalAspect to container");
         return new GlobalTransactionalAspect();
     }
     
     @Bean
     public GlobalTransactionManager globalTransactionManager() {
-        log.info("加载GlobalTransactionManager到容器中");
+        log.info("load globalTransactionManager to container");
         return new GlobalTransactionManager();
     }
 }

@@ -23,11 +23,13 @@ package com.mitbook.support.enumeration;
  */
 public enum TransactionalType {
     
-    BEGIN(1, "事务开始,需要创建事务组对象"),
+    BEGIN(1, "the transaction begins and the transaction group object needs to be created"),
     
-    ADD(0, "添加到事务组中"),
-    
-    END(-1, "事务结束,需要计算事务组中各个子事务结果");
+    ADD(0, "add to transaction group"),
+    /**
+     * 事务结束,需要计算事务组中各个子事务结果
+     */
+    END(-1, "when the transaction end, it is necessary to calculate the results of each child transaction in the transaction group");
     
     public String getMsg() {
         return msg;
