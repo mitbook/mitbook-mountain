@@ -19,6 +19,7 @@
  1.未经本人允许请勿用于商业
  2.该框架目前性能不是很好,后期会通过rpc或者netty来解决性能问题
  3.mitbook-test工程中存在订单扣减问题,不必在意,这不是该分布式框架问题,而是订单扣减库存问题,故不作处理
+ 4.如果看日志打印的英文不懂,请看:https://github.com/mitbook/mitbook-mountain/commit/6e136e7f3b1313b68c94761cad16c05e68212e3d
 #集成第三方框架使用
  1.引入maven依赖
  <dependency>
