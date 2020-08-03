@@ -39,6 +39,11 @@ public class GlobalTransactionManager {
     private RedisTemplate redisTemplate;
     
     /**
+     * end的二个子事务
+     */
+    private Integer endSecondChildTransaction = 2;
+    
+    /**
      * 全局事务和子事务映射关系
      */
     public static final String GLOBAL_TRANSACTION_MAPPING_CHILD_TRANSACTIONAL_CACHE_KEY = "MIT_DIST_TRANSACTIONAL:";
@@ -85,9 +90,8 @@ public class GlobalTransactionManager {
             }
             
         }
-        
-        //没有收到begin 和end 的二个子事务
-        if (beginAndEnd.get() != 2) {
+        //没有收到begin 和end的二个子事务
+        if (beginAndEnd.get() != endSecondChildTransaction) {
             return TransactionalStatus.WAITING.getCode();
         }
         
