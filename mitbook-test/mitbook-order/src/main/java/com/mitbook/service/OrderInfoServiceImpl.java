@@ -50,7 +50,7 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
     @Transactional
     @GlobalTransactional(transType = TransactionalType.BEGIN)
     public void saveOrder(OrderInfo order) {
-        log.info("执行目标方法");
+        log.info("implementation target method");
         orderInfoMapper.saveOrder(order);
         
         //构建请求头
@@ -62,9 +62,7 @@ public class OrderInfoServiceImpl implements IOrderInfoService {
                 .exchange(url + order.getProductId(), HttpMethod.GET, requestEntity, String.class);
         
         if ("error".equals(response.getBody())) {
-            throw new RuntimeException("调用远程服务异常" + url + order.getProductId());
+            throw new RuntimeException("exception calling remote service" + url + order.getProductId());
         }
-/*
-        System.out.println(1/0);*/
     }
 }

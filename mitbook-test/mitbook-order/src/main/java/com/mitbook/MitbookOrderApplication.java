@@ -36,7 +36,7 @@ public class MitbookOrderApplication {
     
     @Bean
     public RedisTemplate redisTemplate(RedisConnectionFactory redisConnectionFactory) {
-        log.info("加载RedisTemplate到容器中");
+        log.info("load RedisTemplate to container");
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
         template.setDefaultSerializer(new Jackson2JsonRedisSerializer<Object>(Object.class));
         template.setConnectionFactory(redisConnectionFactory);
