@@ -25,6 +25,10 @@ import org.springframework.context.annotation.Bean;
  */
 public class GlobalServerMarkerConfiguration {
     
+    class Marker {
+    
+    }
+    
     @Bean
     public Marker globalServerMarkerBean() {
         return new Marker();
