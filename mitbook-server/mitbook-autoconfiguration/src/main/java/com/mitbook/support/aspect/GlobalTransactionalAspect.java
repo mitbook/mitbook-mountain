@@ -54,7 +54,7 @@ public class GlobalTransactionalAspect {
     
     @Pointcut("@annotation(com.mitbook.support.anno.GlobalTransactional)")
     public void pointCut() {
-    
+
     }
     
     @Around("pointCut()")
@@ -95,8 +95,10 @@ public class GlobalTransactionalAspect {
             globalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
-            log.error("save the child transaction state to redis and throw an exception:globalId:{},childId:{},exception:{}", childTransaction.getGlobalTransactionalId(),
-                    childTransaction.getChildTransactionalId(), throwable.getStackTrace());
+            log.error(
+                    "save the child transaction state to redis and throw an exception:globalId:{},childId:{},exception:{}",
+                    childTransaction.getGlobalTransactionalId(), childTransaction.getChildTransactionalId(),
+                    throwable.getStackTrace());
             //调用本地事务方法异常的话,修改当前子事务状态为ROLLBACK状态
             childTransaction.setTransactionalStatusCode(TransactionalStatus.RollBACK.getCode());
             globalTransactionManager.saveToRedis(childTransaction);

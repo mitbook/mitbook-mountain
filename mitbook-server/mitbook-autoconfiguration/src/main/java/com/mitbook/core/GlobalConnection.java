@@ -99,7 +99,7 @@ public class GlobalConnection extends GlobalAbstractConnection {
      * @throws SQLException
      */
     @Override
-    public void rollback(){
+    public void rollback() {
         try {
             //没有加入到分布式事务中,使用的是本地事务
             if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
@@ -108,10 +108,11 @@ public class GlobalConnection extends GlobalAbstractConnection {
             } else {
                 commit();
             }
-        }catch (SQLException e){
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
     /**
      * 我们需要在这里动手脚
      *
@@ -119,7 +120,7 @@ public class GlobalConnection extends GlobalAbstractConnection {
      */
     @Override
     public void close() throws SQLException {
-    
+
     }
     
     /**

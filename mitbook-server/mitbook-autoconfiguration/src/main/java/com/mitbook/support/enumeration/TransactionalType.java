@@ -29,7 +29,8 @@ public enum TransactionalType {
     /**
      * 事务结束,需要计算事务组中各个子事务结果
      */
-    END(-1, "when the transaction end, it is necessary to calculate the results of each child transaction in the transaction group");
+    END(-1,
+            "when the transaction end, it is necessary to calculate the results of each child transaction in the transaction group");
     
     public String getMsg() {
         return msg;

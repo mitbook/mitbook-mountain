@@ -37,7 +37,8 @@ public class GlobalTransactionIdIntercept implements HandlerInterceptor {
         try {
             String globalTransactionId = request.getHeader("globalTransactionId");
             if (StringUtils.isEmpty(globalTransactionId)) {
-                log.info("the request header does not contain the request parameter globalTransactionId:{}", globalTransactionId);
+                log.info("the request header does not contain the request parameter globalTransactionId:{}",
+                        globalTransactionId);
                 return false;
             }
             TransactionalHolder.set(globalTransactionId);
