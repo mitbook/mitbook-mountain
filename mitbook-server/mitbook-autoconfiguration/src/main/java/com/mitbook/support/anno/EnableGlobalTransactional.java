@@ -30,6 +30,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Import(GlobalServerMarkerConfiguration.class)
-public @interface EnableMitDistributedTransactional {
+public @interface EnableGlobalTransactional {
 
 }

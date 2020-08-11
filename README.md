@@ -27,7 +27,7 @@
     <artifactId>mitbook-stater</artifactId>
     <version>1.0</version>
   </dependency>
-  2.在启动类上加上@EnableMitDistributedTransactional注解,就能解决分布式事务问题
+  2.在启动类上加上@EnableGlobalTransactional注解,就能解决分布式事务问题
 #代码共享说明
  1.如源码爱好者有更好思想,欢迎来扰,本人以真诚的谢意欢迎您来贡献
  2.如发现bug请及时与我联系,本人看到消息会在第一时间联系你,帮您解决问题
