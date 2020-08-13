@@ -56,13 +56,15 @@ public class GlobalTransactionManager {
      * @exception: 可能抛出redis操作存储异常
      */
     public Integer calculationChildTransactionStatus(String globalTransactionId) {
-        
-        //获取hashKey 下的所有filed value
+        /**
+         * 获取hashKey 下的所有filed value
+         */
         Map<String, String> childTransMap = redisTemplate.opsForHash().entries(generatorHashKey(globalTransactionId));
         Set<String> childTransIdSet = childTransMap.keySet();
         Iterator<String> iterator = childTransIdSet.iterator();
-        
-        //用户统计各个子事务commit的提交个数
+        /**
+         * 用户统计各个子事务commit的提交个数
+         */
         AtomicInteger commitCount = new AtomicInteger(0);
         
         boolean isRollBack = false;
@@ -74,12 +76,16 @@ public class GlobalTransactionManager {
             log.info("transactionalInfo:{}", childTransMap.get(childTransId));
             ChildTransaction childTransaction = JSONObject
                     .parseObject(childTransMap.get(childTransId), ChildTransaction.class);
-            
-            //只要子事务其中一个出现rollback,分布式事务回滚
+    
+            /**
+             * 只要子事务其中一个出现rollback,分布式事务回滚
+             */
             if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.RollBACK.getCode()) {
                 isRollBack = true;
             }
-            //统计commit的个数
+            /**
+             * 统计commit的个数
+             */
             if (childTransaction.getTransactionalStatusCode() == TransactionalStatus.COMMIT.getCode()) {
                 commitCount.incrementAndGet();
             }
@@ -90,17 +96,23 @@ public class GlobalTransactionManager {
             }
             
         }
-        //没有收到begin 和end的二个子事务
+        /**
+         * 没有收到begin 和end的二个子事务
+         */
         if (beginAndEnd.get() != endSecondChildTransaction) {
             return TransactionalStatus.WAITING.getCode();
         }
-        
-        //收到了begin 和end的子事务对象,但是其中有出现了rollback,全局回滚
+    
+        /**
+         * 收到了begin 和end的子事务对象,但是其中有出现了rollback,全局回滚
+         */
         if (isRollBack) {
             return TransactionalStatus.RollBACK.getCode();
         }
-        
-        //若所有的子事务都是commit的
+    
+        /**
+         * 若所有的子事务都是commit的
+         */
         if (childTransMap.size() == commitCount.get()) {
             return TransactionalStatus.COMMIT.getCode();
         }
@@ -117,16 +129,24 @@ public class GlobalTransactionManager {
      */
     public void saveToRedis(ChildTransaction childTransaction) {
         try {
-            //从子事务中获取全局事务id
+            /**
+             * 从子事务中获取全局事务id
+             */
             String globalTranslationalId = childTransaction.getGlobalTransactionalId();
-            
-            //生成唯一的key
+    
+            /**
+             * 生成唯一的key
+             */
             String generatorHashKey = generatorHashKey(globalTranslationalId);
-            
-            //设置key的过期时间
+    
+            /**
+             * 设置key的过期时间
+             */
             redisTemplate.expire(generatorHashKey, 10, TimeUnit.SECONDS);
-            
-            //把事务对象保存到redis中
+    
+            /**
+             * 把事务对象保存到redis中
+             */
             redisTemplate.opsForHash().put(generatorHashKey, childTransaction.getChildTransactionalId(),
                     JSONObject.toJSON(childTransaction).toString());
         } catch (Exception e) {

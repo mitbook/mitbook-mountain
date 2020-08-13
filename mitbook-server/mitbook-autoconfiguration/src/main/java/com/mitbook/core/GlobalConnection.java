@@ -52,25 +52,32 @@ public class GlobalConnection extends GlobalAbstractConnection {
      */
     @Override
     public void commit() throws SQLException {
-        
-        //从线程变量中获取全局事务id
+        /**
+         * 从线程变量中获取全局事务id
+         */
         String globalTransactionId = TransactionalHolder.get();
-        
-        //没有加入到分布式事务中,使用本地的事务
+        /**
+         * 没有加入到分布式事务中,使用本地的事务
+         */
         if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
             log.info("do not join in distributed transaction, use local transaction");
             getConnection().commit();
             return;
         }
-        //开启一个新的线程去监控redis内存值的变化
+        /**
+         * 开启线程池去监控redis内存值的变化
+         */
         ScheduledThreadPoolExecutor threadPool = new ScheduledThreadPoolExecutor(10);
         
         AtomicLong count = new AtomicLong(0);
-        
-        //定时线程池
+        /**
+         * 定时线程池
+         */
         threadPool.scheduleWithFixedDelay(new Runnable() {
             public void run() {
-                //轮询的去监控redis的值的变化
+                /**
+                 * 轮询的去监控redis的值的变化
+                 */
                 Integer globalTransStatus = getGlobalTransactionManager()
                         .calculationChildTransactionStatus(globalTransactionId);
                 TransactionalStatus transactionalStatus = TransactionalStatus.getByCode(globalTransStatus);
@@ -101,7 +108,9 @@ public class GlobalConnection extends GlobalAbstractConnection {
     @Override
     public void rollback() {
         try {
-            //没有加入到分布式事务中,使用的是本地事务
+            /**
+             * 没有加入到分布式事务中,使用的是本地事务
+             */
             if (StringUtils.isEmpty(TransactionalHolder.getChild())) {
                 log.info("do not join in distributed transaction, use local transaction");
                 getConnection().rollback();
@@ -152,7 +161,9 @@ public class GlobalConnection extends GlobalAbstractConnection {
      */
     private void globalRollBack(Connection connection, ScheduledExecutorService threadPool) {
         try {
-            //分布式事务不能提交
+            /**
+             * 分布式事务不能提交
+             */
             connection.rollback();
         } catch (SQLException e) {
             log.info("rollBack local transaction exception:{}", e.getMessage());
