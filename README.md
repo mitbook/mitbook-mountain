@@ -24,10 +24,10 @@
 # *Technology selection*
  >+ springboot,aop,redis and so on
  
-# 测试地址
+# Test address
  >+ *<http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1>*
  
-# *注意*
+# *be careful*
  >+ Do not use it for business without my permission
  >+ At present, the performance of this framework is not very good. In the future, RPC or netty will be used to 
     solve the performance problems
