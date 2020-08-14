@@ -57,3 +57,26 @@
 # *proposal*
  >+ It is recommended to use redis cluster architecture mode to ensure high availability of redis 
    (mixed persistence of redis can be enabled to ensure high availability of redis)
+
+# *Quick start*
+ ![1](/doc/images/1.png)
+ ![2](/doc/images/2.png)
+ ![3](/doc/images/3.png)
+ ![4](/doc/images/4.png)
+ ![5](/doc/images/5.png)
+ ![6](/doc/images/6.png)
+ ![6](/doc/images/7.png)
+ ![8](/doc/images/8.png)
+ ![9](/doc/images/9.png)
+ ![10](/doc/images/10.png)
+ ![11](/doc/images/11.png)
+ ![12](/doc/images/12.png)
+ ![13](/doc/images/13.png)
+ ![14](/doc/images/14.png)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
