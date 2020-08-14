@@ -34,6 +34,11 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class MitbookOrderApplication {
     
+    /**
+     * 扩展redis序列化数据
+     * @param redisConnectionFactory
+     * @return
+     */
     @Bean
     public RedisTemplate redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         log.info("load RedisTemplate to container");

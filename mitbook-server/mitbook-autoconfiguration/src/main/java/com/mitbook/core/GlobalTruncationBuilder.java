@@ -25,9 +25,14 @@ public class GlobalTruncationBuilder {
     
     private ChildTransaction childTransaction;
     
+    public ChildTransaction builder() {
+        return childTransaction;
+    }
+    
     public GlobalTruncationBuilder() {
         childTransaction = new ChildTransaction();
     }
+    
     
     public GlobalTruncationBuilder builderChildTransactionalId(String childTransactionalId) {
         childTransaction.setChildTransactionalId(childTransactionalId);
@@ -47,9 +52,5 @@ public class GlobalTruncationBuilder {
     public GlobalTruncationBuilder builderGlobalTransactionId(String globalTransactionId) {
         childTransaction.setGlobalTransactionalId(globalTransactionId);
         return this;
-    }
-    
-    public ChildTransaction builder() {
-        return childTransaction;
     }
 }
