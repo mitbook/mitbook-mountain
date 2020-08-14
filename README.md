@@ -14,7 +14,7 @@
 # *Use details*
  >+ See the mitbook-test project for details
  
-# design principle
+# Design principle
  >+ At present, we don't provide the explanation of the principle. We can read the source code to 
     understand the principle. The design documents will be further improved
  
@@ -27,7 +27,7 @@
 # Test address
  >+ *<http://localhost:8066/order/saveOrder?orderNo=12222&userId=1000&productId=1&productNum=1>*
  
-# *be careful*
+# *Be careful*
  >+ Do not use it for business without my permission
  >+ At present, the performance of this framework is not very good. In the future, RPC or netty will be used to 
     solve the performance problems
@@ -39,13 +39,11 @@
 # *Integrating the use of third-party frameworks*
  1. Introducing Maven dependency
  ``` java
- 
  <dependency>
     <groupId>com.mitbook</groupId>
     <artifactId>mitbook-stater</artifactId>
     <version>1.0</version>
   </dependency>
-  
   ```
   2. Add @EnableGlobalTransactional annotation to the startup class to solve the distributed transaction problem
   
@@ -54,7 +52,7 @@
  >+ If you find a bug, please contact me in time. I will contact you at the first time to help you solve the problem
  >+ This framework is only used for learning, not for business. If you need to apply business, please contact me. Thank you
  
-# *proposal*
+# *Proposal*
  >+ It is recommended to use redis cluster architecture mode to ensure high availability of redis 
    (mixed persistence of redis can be enabled to ensure high availability of redis)
 
