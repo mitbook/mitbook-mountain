@@ -76,7 +76,7 @@ public class GlobalTransactionManager {
             log.info("transactionalInfo:{}", childTransMap.get(childTransId));
             ChildTransaction childTransaction = JSONObject
                     .parseObject(childTransMap.get(childTransId), ChildTransaction.class);
-    
+            
             /**
              * 只要子事务其中一个出现rollback,分布式事务回滚
              */
@@ -102,14 +102,14 @@ public class GlobalTransactionManager {
         if (beginAndEnd.get() != endSecondChildTransaction) {
             return TransactionalStatus.WAITING.getCode();
         }
-    
+        
         /**
          * 收到了begin 和end的子事务对象,但是其中有出现了rollback,全局回滚
          */
         if (isRollBack) {
             return TransactionalStatus.RollBACK.getCode();
         }
-    
+        
         /**
          * 若所有的子事务都是commit的
          */
@@ -133,17 +133,17 @@ public class GlobalTransactionManager {
              * 从子事务中获取全局事务id
              */
             String globalTranslationalId = childTransaction.getGlobalTransactionalId();
-    
+            
             /**
              * 生成唯一的key
              */
             String generatorHashKey = generatorHashKey(globalTranslationalId);
-    
+            
             /**
              * 设置key的过期时间
              */
             redisTemplate.expire(generatorHashKey, 10, TimeUnit.SECONDS);
-    
+            
             /**
              * 把事务对象保存到redis中
              */

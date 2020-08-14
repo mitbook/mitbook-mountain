@@ -54,40 +54,40 @@ public class GlobalTransactionalAspect {
     
     @Pointcut("@annotation(com.mitbook.support.anno.GlobalTransactional)")
     public void pointCut() {
-
+    
     }
     
     @Around("pointCut()")
     public void invoke(ProceedingJoinPoint joinPoint) {
         
         Method targetMethod = getTargetMethod(joinPoint);
-    
+        
         /**
          * 获取目标方法的注解
          */
         GlobalTransactional globalTransactional = targetMethod.getAnnotation(GlobalTransactional.class);
-    
+        
         /**
          * 获取注解属性对象
          */
         TransactionalType transactionalType = globalTransactional.transType();
-    
+        
         /**
          * 判断是不是分布式事务开始节点
          */
         if (transactionalType.getCode() == TransactionalType.BEGIN.getCode()) {
-    
+            
             /**
              * 生成全局唯一id
              */
             String gableTransactionId = GlobalAndChildTransactionId.generatorGlobalTransactionalId();
-    
+            
             /**
              * 放入线程变量中
              */
             TransactionalHolder.set(gableTransactionId);
         }
-    
+        
         /**
          * 使用建造者模式来构建子事务对象(此时的事务对象的状态是中间状态 WAFTING状态)
          */
@@ -95,17 +95,17 @@ public class GlobalTransactionalAspect {
                 TransactionalStatus.WAITING.getCode());
         
         try {
-    
+            
             /**
              * 把子事务对象上报到分布式事务管理中心
              */
             globalTransactionManager.saveToRedis(childTransaction);
-    
+            
             /**
              * 调用目标方法,我们需要在目标新开一个线程去监控redis的值是否变化来决定,本地事务是提交还是回滚
              */
             joinPoint.proceed();
-    
+            
             /**
              * 目标方法没有抛出异常  修改中间状态为COMMIT状态
              */

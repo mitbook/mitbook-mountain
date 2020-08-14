@@ -36,6 +36,7 @@ public class MitbookOrderApplication {
     
     /**
      * 扩展redis序列化数据
+     *
      * @param redisConnectionFactory
      * @return
      */
