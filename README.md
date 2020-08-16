@@ -32,12 +32,12 @@
  >+ At present, the performance of this framework is not very good. In the future, RPC or netty will be used to 
     solve the performance problems
  >+ There is an order deduction problem in the mitbook-test project,so don't worry about it. This is not the distributed 
-    framework problem, but the order deduction inventory problem, so it is not handled
+    framework problem,but the order deduction inventory problem, so it is not handled
  >+ If you don't understand the English of log printing, please read it
     :*https://github.com/mitbook/mitbook-mountain/commit/6e136e7f3b1313b68c94761cad16c05e68212e3d*
  
 # *Integrating the use of third-party frameworks*
- 1. Introducing Maven dependency
+ 1.Introducing Maven dependency
  ``` java
  <dependency>
     <groupId>com.mitbook</groupId>
@@ -45,7 +45,7 @@
     <version>1.0</version>
   </dependency>
   ```
-  2. Add @EnableGlobalTransactional annotation to the startup class to solve the distributed transaction problem
+  2.Add @EnableGlobalTransactional annotation to the startup class to solve the distributed transaction problem
   
 # *Code contribution description*
  >+ If source enthusiasts have better ideas, welcome to disturb,I sincerely thank you for your contribution
