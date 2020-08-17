@@ -71,10 +71,4 @@
  ![12](/doc/images/12.png)
  ![13](/doc/images/13.png)
  ![14](/doc/images/14.png)
- 
- 
- 
- 
- 
- 
- 
+ ![15](/doc/images/15.png)
