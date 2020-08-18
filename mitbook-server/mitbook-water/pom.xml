@@ -8,10 +8,10 @@
         <version>1.0</version>
     </parent>
     <groupId>com.mitbook</groupId>
-    <artifactId>mitbook-autoconfiguration</artifactId>
+    <artifactId>mitbook-water</artifactId>
     <version>1.0</version>
-    <name>mitbook-autoconfiguration</name>
-    <description>mitbook-autoconfiguration</description>
+    <name>mitbook-water</name>
+    <description>mitbook-water</description>
     <packaging>jar</packaging>
     <properties>
         <java.version>1.8</java.version>
