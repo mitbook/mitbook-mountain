@@ -113,6 +113,7 @@ public class GlobalTransactionalAspect {
             globalTransactionManager.saveToRedis(childTransaction);
             
         } catch (Throwable throwable) {
+            String message = throwable.getMessage();
             log.error(
                     "save the child transaction state to redis and throw an exception:globalId:{},childId:{},exception:{}",
                     childTransaction.getGlobalTransactionalId(), childTransaction.getChildTransactionalId(),
@@ -122,7 +123,7 @@ public class GlobalTransactionalAspect {
              */
             childTransaction.setTransactionalStatusCode(TransactionalStatus.RollBACK.getCode());
             globalTransactionManager.saveToRedis(childTransaction);
-            throw new RuntimeException(throwable.getMessage());
+            throw new RuntimeException(message);
         }
         
     }
