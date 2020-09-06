@@ -202,12 +202,12 @@ public abstract class GlobalAbstractConnection implements Connection {
     
     @Override
     public PreparedStatement prepareStatement(String sql, int[] columnIndexes) throws SQLException {
-        return null;
+        return connection.prepareStatement(sql, columnIndexes);
     }
     
     @Override
     public PreparedStatement prepareStatement(String sql, String[] columnNames) throws SQLException {
-        return null;
+        return connection.prepareStatement(sql, columnNames);
     }
     
     @Override

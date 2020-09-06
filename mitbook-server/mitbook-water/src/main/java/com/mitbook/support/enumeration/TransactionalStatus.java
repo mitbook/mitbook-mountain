@@ -47,8 +47,10 @@ public enum TransactionalStatus {
     }
     
     public static TransactionalStatus getByCode(Integer code) {
+        
         for (TransactionalStatus transactionalStatus : values()) {
-            if (transactionalStatus.getCode() == code) {
+            Integer statusCode = transactionalStatus.getCode();
+            if (statusCode == code) {
                 return transactionalStatus;
             }
         }
