@@ -47,6 +47,5 @@ public class GlobalTransactionIdIntercept implements HandlerInterceptor {
             e.printStackTrace();
         }
         return false;
-        
     }
 }

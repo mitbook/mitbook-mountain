@@ -50,7 +50,7 @@
 # *Code contribution description*
  >+ If source enthusiasts have better ideas, welcome to disturb,I sincerely thank you for your contribution
  >+ If you find a bug, please contact me in time.I will contact you at the first time to help you solve the problem
- >+ This framework is only used for learning,not for business.If you need to apply business,please contact me.Thank you
+ >+ This framework is only used for learning,not for business.If you need to apply business,please contact me,Thank you
  
 # *Proposal*
  >+ It is recommended to use redis cluster architecture mode to ensure high availability of redis 
