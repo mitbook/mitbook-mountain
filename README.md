@@ -41,7 +41,7 @@
  ``` java
  <dependency>
     <groupId>com.mitbook</groupId>
-    <artifactId>mitbook-server</artifactId>
+    <artifactId>mitbook-water</artifactId>
     <version>1.0</version>
   </dependency>
   ```
