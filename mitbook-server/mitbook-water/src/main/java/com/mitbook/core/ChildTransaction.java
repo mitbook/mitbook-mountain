@@ -47,6 +47,4 @@ public class ChildTransaction implements Serializable {
      * 子事务类型
      */
     private Integer TransactionalTypeCode;
-    
-    
 }
